@@ -1,0 +1,37 @@
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+  "slug": "fidelity-money-market-fzfxx",
+  "name": "Fidelity Money Market — FZFXX (Liquidity Runway)",
+  "type": "money-market",
+  "status": "active",
+  "barbell_layer": "liquidity-runway",
+  "entity": "Culliford Family Office LLC",
+  "sector": "fixed-income",
+  "geography": "US-National",
+  "ticker": "FZFXX",
+  "domain": null,
+  "investment_date": "2020-03-01",
+  "initial_amount_usd": 150000,
+  "current_value_usd": 285000,
+  "ownership_pct": null,
+  "provenance": {
+    "source": "Fidelity account statement — FZFXX position established March 2020",
+    "timestamp_utc": "2026-06-23T00:00:00Z",
+    "author": "grayson.culliford@hivefs.com",
+    "file_hash": "c3d4e5f6",
+    "links": []
+  },
+  "contacts": [],
+  "deal_doc_pointers": [],
+  "thesis_summary": "The Fidelity Government Money Market Fund (FZFXX) is our primary liquidity runway vehicle. It currently yields ~4.85% APY with same-day liquidity. This is Layer 1 of the barbell — it is not an investment, it is insurance. The balance should cover 6–12 months of all operating expenses and debt service at all times. It never goes to zero.",
+  "risk_factors": [
+    "Yield falls when the Fed cuts rates — monitor for rate environment changes",
+    "Not FDIC insured (though SIPC-covered up to $500K); government MMF is considered very low risk",
+    "Opportunity cost if held in excess — excess above 12-month runway should be redeployed"
+  ],
+  "tags": ["money-market", "liquidity-runway", "fidelity", "layer-1", "fzfxx"],
+  "supersedes_ref": null,
+  "ic_memo_path": null,
+  "latest_valuation_ref": null,
+  "last_update": null
+}

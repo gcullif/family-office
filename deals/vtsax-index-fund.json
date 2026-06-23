@@ -1,0 +1,37 @@
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "slug": "vtsax-index-fund",
+  "name": "VTSAX — Vanguard Total Stock Market Index Fund",
+  "type": "public-equity",
+  "status": "active",
+  "barbell_layer": "defensive-compounding",
+  "entity": "Culliford Family Office LLC",
+  "sector": "public-equity",
+  "geography": "US-National",
+  "ticker": "VTSAX",
+  "domain": null,
+  "investment_date": "2022-01-15",
+  "initial_amount_usd": 250000,
+  "current_value_usd": 318400,
+  "ownership_pct": null,
+  "provenance": {
+    "source": "Fidelity brokerage account — initial purchase confirmation 2022-01-15",
+    "timestamp_utc": "2026-06-23T00:00:00Z",
+    "author": "grayson.culliford@hivefs.com",
+    "file_hash": "a1b2c3d4",
+    "links": []
+  },
+  "contacts": [],
+  "deal_doc_pointers": [],
+  "thesis_summary": "VTSAX tracks the entire US stock market through ~3,700 companies. We hold this as our core defensive compounding position because it gives maximum diversification at near-zero cost (0.04% expense ratio). It will grow with the US economy over time and requires no active management. This is the ballast of the portfolio — it goes up over any 10-year window.",
+  "risk_factors": [
+    "Short-term drawdowns of 30–50% are normal and expected — requires patience",
+    "US-concentration risk: does not cover international markets",
+    "Inflation can erode real returns if held in taxable account without rebalancing"
+  ],
+  "tags": ["index-fund", "public-equity", "defensive-compounding", "vanguard", "fidelity"],
+  "supersedes_ref": null,
+  "ic_memo_path": null,
+  "latest_valuation_ref": null,
+  "last_update": null
+}

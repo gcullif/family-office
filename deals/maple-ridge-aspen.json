@@ -1,0 +1,60 @@
+{
+  "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+  "slug": "maple-ridge-aspen",
+  "name": "Maple Ridge — Aspen Vacation Property",
+  "type": "real-estate",
+  "status": "active",
+  "barbell_layer": "defensive-compounding",
+  "entity": "Culliford Family Trust",
+  "sector": "real-estate",
+  "geography": "US-West",
+  "ticker": null,
+  "domain": null,
+  "investment_date": "2021-08-30",
+  "initial_amount_usd": 2800000,
+  "current_value_usd": 3650000,
+  "ownership_pct": 100,
+  "provenance": {
+    "source": "Closing statement — First American Title, August 30 2021",
+    "timestamp_utc": "2026-06-23T00:00:00Z",
+    "author": "grayson.culliford@hivefs.com",
+    "file_hash": "b2c3d4e5",
+    "links": []
+  },
+  "contacts": [
+    {
+      "name": "Mountain West Property Management",
+      "email": "ops@mountainwestpm.com",
+      "role": "Property Manager",
+      "phone": "+1-970-555-0142"
+    }
+  ],
+  "deal_doc_pointers": [
+    {
+      "label": "Purchase Agreement",
+      "storage": "gdrive",
+      "key": "family-office/real-assets/maple-ridge-aspen/purchase-agreement-2021-08-30.pdf",
+      "sha256": null,
+      "uploaded_at": null
+    },
+    {
+      "label": "Hartwell Family Trust Appraisal 2026",
+      "storage": "gdrive",
+      "key": "family-office/real-assets/maple-ridge-aspen/appraisal-2026-06-18.pdf",
+      "sha256": null,
+      "uploaded_at": "2026-06-18T00:00:00Z"
+    }
+  ],
+  "thesis_summary": "A 4-bedroom vacation property in Aspen, CO held by the family trust. Generates rental income when not in family use (approximately 16 weeks/year at $4,500–$6,000/week). Aspen real estate has appreciated at ~6% annually over the past decade. This is a dual-purpose asset: a family retreat and a store of value that keeps pace with inflation. The mortgage at 6.25% fixed is serviced by rental income with a comfortable DSCR.",
+  "risk_factors": [
+    "Illiquid — cannot be sold quickly in a downturn without significant discount",
+    "DSCR currently 1.07 — below our 1.25 comfort threshold; monitoring required",
+    "Wildfire risk in the region; insurance reviewed annually",
+    "Rental income seasonal and dependent on discretionary travel spending"
+  ],
+  "tags": ["real-estate", "vacation-property", "aspen", "trust-held", "defensive-compounding"],
+  "supersedes_ref": null,
+  "ic_memo_path": null,
+  "latest_valuation_ref": "archive/real-assets/appraisal-trust-hartwell-family-trust-2026-06-18.md",
+  "last_update": null
+}

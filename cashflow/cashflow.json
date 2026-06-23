@@ -1,0 +1,195 @@
+{
+  "sources": [
+    {
+      "id": "csrc-a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "name": "Maple Ridge Aspen — Rental Income",
+      "type": "rental",
+      "deal_ref": "deals/maple-ridge-aspen.json",
+      "active": true,
+      "expected_monthly_usd": 14000,
+      "notes": "Rental income averaged over 16 bookable weeks/year at ~$5,250/week. Seasonal — peaks Dec–Mar and Jun–Aug."
+    },
+    {
+      "id": "csrc-b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "name": "VTSAX — Quarterly Dividends",
+      "type": "dividend",
+      "deal_ref": "deals/vtsax-index-fund.json",
+      "active": true,
+      "expected_monthly_usd": 875,
+      "notes": "VTSAX dividend yield ~1.3% annually on $318,400 position = ~$4,139/yr = ~$1,035/quarter. Smoothed to monthly."
+    },
+    {
+      "id": "csrc-c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "name": "FZFXX — Money Market Interest",
+      "type": "interest",
+      "deal_ref": "deals/fidelity-money-market-fzfxx.json",
+      "active": true,
+      "expected_monthly_usd": 1150,
+      "notes": "4.85% APY on $285,000 balance = ~$13,822/yr = ~$1,152/month."
+    },
+    {
+      "id": "csrc-d4e5f6a7-b8c9-0123-def0-123456789012",
+      "name": "Maple Ridge Mortgage — First National Bank",
+      "type": "debt-service",
+      "deal_ref": "deals/maple-ridge-aspen.json",
+      "active": true,
+      "expected_monthly_usd": -12800,
+      "notes": "30-yr fixed at 6.25%. P&I on $1,850,000 balance. Matures July 2032."
+    },
+    {
+      "id": "csrc-e5f6a7b8-c9d0-1234-ef01-234567890123",
+      "name": "Family Office Operating Expenses",
+      "type": "operating-expense",
+      "deal_ref": null,
+      "active": true,
+      "expected_monthly_usd": -8500,
+      "notes": "Covers legal, accounting, advisory fees, insurance premiums, and misc admin. Reviewed quarterly."
+    }
+  ],
+
+  "items": [
+    {
+      "id": "cfi-a1b2c3d4-0001-0001-0001-000000000001",
+      "source_id": "csrc-a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "period": "2026-06",
+      "amount_usd": 16500,
+      "category": "rental-income",
+      "accrual_date": "2026-06-15",
+      "notes": "June rental: 3 bookings totaling $16,500 gross before PM fee.",
+      "provenance": {
+        "source": "Property manager statement June 2026",
+        "timestamp_utc": "2026-06-23T00:00:00Z",
+        "author": "grayson.culliford@hivefs.com",
+        "file_hash": null
+      }
+    },
+    {
+      "id": "cfi-b2c3d4e5-0002-0002-0002-000000000002",
+      "source_id": "csrc-b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "period": "2026-06",
+      "amount_usd": 1035,
+      "category": "dividend",
+      "accrual_date": "2026-06-28",
+      "notes": "Q2 2026 VTSAX dividend. 1,240 shares @ $0.835/sh.",
+      "provenance": {
+        "source": "Fidelity brokerage statement Q2 2026",
+        "timestamp_utc": "2026-06-23T00:00:00Z",
+        "author": "grayson.culliford@hivefs.com",
+        "file_hash": null
+      }
+    },
+    {
+      "id": "cfi-c3d4e5f6-0003-0003-0003-000000000003",
+      "source_id": "csrc-c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "period": "2026-06",
+      "amount_usd": 1152,
+      "category": "interest-income",
+      "accrual_date": "2026-06-30",
+      "notes": "FZFXX June interest. $285,000 @ 4.85% APY.",
+      "provenance": {
+        "source": "Fidelity money market statement June 2026",
+        "timestamp_utc": "2026-06-23T00:00:00Z",
+        "author": "grayson.culliford@hivefs.com",
+        "file_hash": null
+      }
+    },
+    {
+      "id": "cfi-d4e5f6a7-0004-0004-0004-000000000004",
+      "source_id": "csrc-d4e5f6a7-b8c9-0123-def0-123456789012",
+      "period": "2026-06",
+      "amount_usd": -12800,
+      "category": "debt-service",
+      "accrual_date": "2026-06-01",
+      "notes": "Monthly P&I — Maple Ridge mortgage, First National Bank.",
+      "provenance": {
+        "source": "Mortgage autopay confirmation June 2026",
+        "timestamp_utc": "2026-06-23T00:00:00Z",
+        "author": "grayson.culliford@hivefs.com",
+        "file_hash": null
+      }
+    },
+    {
+      "id": "cfi-e5f6a7b8-0005-0005-0005-000000000005",
+      "source_id": "csrc-e5f6a7b8-c9d0-1234-ef01-234567890123",
+      "period": "2026-06",
+      "amount_usd": -8500,
+      "category": "operating-expense",
+      "accrual_date": "2026-06-30",
+      "notes": "June operating: legal review $2,400, accounting $1,800, advisory retainer $2,500, insurance $850, misc $950.",
+      "provenance": {
+        "source": "Manual entry from June expense summary",
+        "timestamp_utc": "2026-06-23T00:00:00Z",
+        "author": "grayson.culliford@hivefs.com",
+        "file_hash": null
+      }
+    }
+  ],
+
+  "debt_service": [
+    {
+      "id": "debt-c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "deal_ref": "deals/maple-ridge-aspen.json",
+      "lender": "First National Bank",
+      "loan_type": "mortgage",
+      "balance_usd": 1850000,
+      "rate": 0.0625,
+      "rate_type": "fixed",
+      "index_rate": null,
+      "payment_usd": 12800,
+      "maturity_date": "2032-07-01",
+      "origination_date": "2021-08-30",
+      "dscr": 1.07,
+      "ltv_pct": 50.7,
+      "notes": "30-year fixed. DSCR of 1.07 is below our 1.25 watch threshold — rental income needs to improve or expenses reduced before refinance window in 2027."
+    }
+  ],
+
+  "liquidity_buckets": [
+    {
+      "name": "operating",
+      "balance_usd": 285000,
+      "as_of_date": "2026-06-23",
+      "institution": "Fidelity Money Market — FZFXX",
+      "apy_pct": 4.85,
+      "notes": "Primary liquidity runway vehicle. Target: 6–12 months of all expenses and debt service."
+    },
+    {
+      "name": "reserve",
+      "balance_usd": 95000,
+      "as_of_date": "2026-06-23",
+      "institution": "Marcus High-Yield Savings — Goldman Sachs",
+      "apy_pct": 4.60,
+      "notes": "Emergency buffer. Earmarked for capex reserves on Maple Ridge and unexpected expenses."
+    },
+    {
+      "name": "deployment",
+      "balance_usd": 52000,
+      "as_of_date": "2026-06-23",
+      "institution": "Chase Business Checking",
+      "apy_pct": 0.01,
+      "notes": "Earmarked for next investment commitment. Currently sizing the next power-law bet."
+    }
+  ],
+
+  "runway_snapshots": [
+    {
+      "id": "snap-d4e5f6a7-b8c9-0123-def0-123456789012",
+      "as_of_date": "2026-06-23",
+      "monthly_burn_usd": 21300,
+      "total_liquid_usd": 432000,
+      "runway_months": 20.3,
+      "bucket_breakdown": {
+        "operating_usd": 285000,
+        "reserve_usd": 95000,
+        "deployment_usd": 52000
+      },
+      "monthly_inflows_usd": 18687,
+      "monthly_outflows_usd": 21300,
+      "net_monthly_cashflow_usd": -2613,
+      "alert_triggered": true,
+      "alert_type": "low-dscr-watch",
+      "alert_detail": "Maple Ridge DSCR = 1.07, below 1.25 threshold. Monitor rental income — one vacancy month tips this negative. Refinance window opens Q3 2027.",
+      "notes": "Runway of 20.3 months is healthy. The DSCR watch on Maple Ridge is the primary risk item this quarter. Net monthly burn of $2,613 is manageable; inflows should improve in July peak rental season."
+    }
+  ]
+}
