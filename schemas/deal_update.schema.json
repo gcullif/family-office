@@ -1,0 +1,292 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://familyoffice.local/schemas/deal_update.schema.json",
+  "title": "DealUpdate",
+  "description": "Immutable record of a single incoming update on a post-investment deal. Created by the INGEST→PROCESS→UPDATE→STORE pipeline. Never overwritten — corrections create a new record with corrects_ref.",
+  "type": "object",
+  "required": [
+    "id",
+    "pipeline_stage",
+    "pipeline_timestamps",
+    "deal_id",
+    "deal_slug",
+    "update_type",
+    "received_at",
+    "filed_at",
+    "source_type",
+    "raw_content_pointer",
+    "provenance",
+    "confidence_score",
+    "needs_review",
+    "valuation_refresh_triggered"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique update ID. Format: du-{hex12}. Generated at ingestion time.",
+      "examples": ["du-4a7f9b2c1d3e"]
+    },
+    "schema_version": {
+      "type": "string",
+      "description": "Version of ingest_deal_update.py that created this record.",
+      "examples": ["1.1.0"]
+    },
+    "pipeline_stage": {
+      "type": "string",
+      "enum": ["ingest", "process", "update", "store"],
+      "description": "Current stage in the INGEST→PROCESS→UPDATE→STORE pipeline. A fully filed record is always 'store'."
+    },
+    "pipeline_timestamps": {
+      "type": "object",
+      "description": "UTC timestamps recorded at each pipeline stage transition.",
+      "required": ["ingested_at", "processed_at", "updated_at", "stored_at"],
+      "properties": {
+        "ingested_at":  { "type": "string", "format": "date-time" },
+        "processed_at": { "type": "string", "format": "date-time" },
+        "updated_at":   { "type": "string", "format": "date-time" },
+        "stored_at":    { "type": "string", "format": "date-time" }
+      }
+    },
+    "deal_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID of the parent Deal record in deals/{slug}/deal.json.",
+      "examples": ["a1b2c3d4-e5f6-7890-abcd-ef1234567890"]
+    },
+    "deal_slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Slug of the parent deal. Used in file path construction.",
+      "examples": ["acme-corp-series-b"]
+    },
+    "update_type": {
+      "type": "string",
+      "enum": [
+        "earnings",
+        "financing-round",
+        "valuation-mark",
+        "distribution",
+        "company-news",
+        "macro-event",
+        "management-change",
+        "exit",
+        "other"
+      ],
+      "description": "The category of this update. Determines which extracted_data sub-schema is used and whether a valuation refresh is triggered."
+    },
+    "processing_state": {
+      "type": "string",
+      "enum": ["RECEIVED", "PARSED", "MATCHED", "FILED", "PROCESSED", "NEEDS_REVIEW", "REJECTED"],
+      "description": "Current state in the ingestion state machine. Terminal states: PROCESSED, REJECTED."
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC datetime when the raw input arrived (email received timestamp, file upload time, etc.).",
+      "examples": ["2026-07-15T09:14:22Z"]
+    },
+    "filed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC datetime when this record was written to deal-updates/.",
+      "examples": ["2026-07-15T09:14:45Z"]
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["email", "pdf", "web-article", "manual-note", "excel"],
+      "description": "How the update arrived."
+    },
+    "raw_content_pointer": {
+      "type": "object",
+      "description": "Pointer to the raw input file. Raw files are stored in S3 or locally — never committed to git.",
+      "required": ["storage", "key"],
+      "additionalProperties": false,
+      "properties": {
+        "storage": {
+          "type": "string",
+          "enum": ["s3", "local", "gdrive"],
+          "description": "Storage backend for the raw file."
+        },
+        "key": {
+          "type": "string",
+          "description": "Path or key within the storage backend.",
+          "examples": ["raw-updates/2026/07/15/a3f9b1c2-acme-q2-email.eml"]
+        },
+        "sha256_full": {
+          "type": ["string", "null"],
+          "description": "Full SHA-256 hash of the raw file for integrity verification.",
+          "examples": ["a3f9b1c2d5e8f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6"]
+        }
+      }
+    },
+    "extracted_data": {
+      "type": "object",
+      "description": "Structured data extracted from the raw input. Shape varies by update_type — see sub-schemas below.",
+      "oneOf": [
+        {
+          "title": "EarningsData",
+          "description": "Used when update_type = earnings",
+          "properties": {
+            "period": { "type": "string", "examples": ["Q2 2026", "FY2025"] },
+            "revenue_usd": { "type": ["number", "null"] },
+            "revenue_growth_yoy_pct": { "type": ["number", "null"] },
+            "ebitda_usd": { "type": ["number", "null"] },
+            "ebitda_margin_pct": { "type": ["number", "null"] },
+            "cash_balance_usd": { "type": ["number", "null"] },
+            "arr_usd": { "type": ["number", "null"], "description": "Annual Recurring Revenue (SaaS)" },
+            "net_revenue_retention_pct": { "type": ["number", "null"] },
+            "headcount": { "type": ["integer", "null"] },
+            "key_highlights": { "type": "array", "items": { "type": "string" } },
+            "next_milestone": { "type": ["string", "null"] }
+          }
+        },
+        {
+          "title": "FinancingRoundData",
+          "description": "Used when update_type = financing-round",
+          "properties": {
+            "round_type": { "type": "string", "examples": ["Series A", "Series B", "Bridge", "Fund II Final Close"] },
+            "round_size_usd": { "type": ["number", "null"] },
+            "pre_money_valuation_usd": { "type": ["number", "null"] },
+            "post_money_valuation_usd": { "type": ["number", "null"] },
+            "family_office_participation_usd": { "type": ["number", "null"] },
+            "lead_investor": { "type": ["string", "null"] },
+            "close_date": { "type": ["string", "null"], "format": "date" },
+            "new_ownership_pct": { "type": ["number", "null"] }
+          }
+        },
+        {
+          "title": "ValuationMarkData",
+          "description": "Used when update_type = valuation-mark",
+          "properties": {
+            "appraised_value_usd": { "type": ["number", "null"] },
+            "appraiser": { "type": ["string", "null"] },
+            "effective_date": { "type": ["string", "null"], "format": "date" },
+            "method": { "type": ["string", "null"], "enum": ["dcf", "comparable", "nav", "cost-basis", "mark-to-market", "409a", "appraisal", null] },
+            "cap_rate_pct": { "type": ["number", "null"] },
+            "noi_annual_usd": { "type": ["number", "null"] }
+          }
+        },
+        {
+          "title": "DistributionData",
+          "description": "Used when update_type = distribution",
+          "properties": {
+            "distribution_amount_usd": { "type": ["number", "null"] },
+            "distribution_type": {
+              "type": ["string", "null"],
+              "enum": ["return_of_capital", "dividend", "profit_distribution", "interest", "carried_interest", null]
+            },
+            "record_date": { "type": ["string", "null"], "format": "date" },
+            "payment_date": { "type": ["string", "null"], "format": "date" },
+            "per_unit_usd": { "type": ["number", "null"] },
+            "tax_character": { "type": ["string", "null"] }
+          }
+        },
+        {
+          "title": "CompanyNewsData",
+          "description": "Used when update_type = company-news, macro-event, management-change, other",
+          "properties": {
+            "headline": { "type": ["string", "null"] },
+            "summary": { "type": ["string", "null"] },
+            "source_publication": { "type": ["string", "null"] },
+            "source_url": { "type": ["string", "null"], "format": "uri" },
+            "sentiment": { "type": ["string", "null"], "enum": ["positive", "neutral", "negative", null] },
+            "action_required": { "type": ["boolean", "null"] },
+            "action_notes": { "type": ["string", "null"] }
+          }
+        },
+        {
+          "title": "ExitData",
+          "description": "Used when update_type = exit",
+          "properties": {
+            "exit_type": { "type": ["string", "null"], "enum": ["acquisition", "ipo", "secondary-sale", "wind-down", "merger", null] },
+            "exit_date": { "type": ["string", "null"], "format": "date" },
+            "proceeds_usd": { "type": ["number", "null"] },
+            "moic": { "type": ["number", "null"], "description": "Multiple on invested capital" },
+            "irr_pct": { "type": ["number", "null"] },
+            "acquirer": { "type": ["string", "null"] }
+          }
+        }
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Full provenance chain for this update record.",
+      "required": ["timestamp_utc", "file_hash", "ingest_script_version"],
+      "additionalProperties": false,
+      "properties": {
+        "source_url": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "URL if source_type = web-article.",
+          "examples": ["https://techcrunch.com/2026/07/15/acme-raises-series-c", null]
+        },
+        "email_from": {
+          "type": ["string", "null"],
+          "description": "Sender email address if source_type = email.",
+          "examples": ["ir@acmecorp.com", null]
+        },
+        "author": {
+          "type": ["string", "null"],
+          "description": "Human author if source_type = manual-note.",
+          "examples": ["grayson.culliford@hivefs.com", null]
+        },
+        "timestamp_utc": {
+          "type": "string",
+          "format": "date-time",
+          "description": "UTC datetime of the source event (email received time, article publish time, etc.).",
+          "examples": ["2026-07-15T09:14:22Z"]
+        },
+        "file_hash": {
+          "type": "string",
+          "description": "First 8 characters of SHA-256 of the raw input. Used in filename.",
+          "examples": ["a3f9b1c2"]
+        },
+        "ingest_script_version": {
+          "type": "string",
+          "description": "Version of scripts/ingest_deal_update.py that processed this update.",
+          "examples": ["1.2.0"]
+        }
+      }
+    },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Match confidence from deal matching algorithm. 1.0 = deterministic match. <0.7 triggers NEEDS_REVIEW.",
+      "examples": [1.0, 0.91, 0.65]
+    },
+    "needs_review": {
+      "type": "boolean",
+      "description": "True if confidence_score < 0.7 or if the pipeline detected an ambiguous condition requiring human judgment."
+    },
+    "review_notes": {
+      "type": ["string", "null"],
+      "description": "Human-written notes added during NEEDS_REVIEW resolution. Null if needs_review=false.",
+      "examples": ["Confirmed match with acme-corp-series-b via CEO email confirmation 2026-07-16", null]
+    },
+    "valuation_refresh_triggered": {
+      "type": "boolean",
+      "description": "True if this update triggered a valuation recalculation. Automatically true for update_type: earnings, financing-round, valuation-mark, exit."
+    },
+    "valuation_ref": {
+      "type": ["string", "null"],
+      "description": "Relative path to the valuation record created as a result of this update. Null if valuation_refresh_triggered=false.",
+      "examples": ["valuations/acme-corp-series-b/valuation_2026-07-15_b8e2f1a3.json", null]
+    },
+    "corrects_ref": {
+      "type": ["string", "null"],
+      "description": "If this record corrects a prior update, the relative path to the original. Corrections are additive — the original is never deleted.",
+      "examples": ["deal-updates/2026/07/14/acme-corp-series-b--earnings--email--a1b2c3d4.json", null]
+    },
+    "tags": {
+      "type": "array",
+      "description": "Freeform tags for filtering and search.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "examples": [["earnings", "q2-2026", "arr-milestone"]]
+    }
+  }
+}

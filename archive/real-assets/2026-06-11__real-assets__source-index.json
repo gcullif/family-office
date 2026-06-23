@@ -1,0 +1,56 @@
+{
+  "domain": "real-assets",
+  "run_id": "trun_b7d17f0e99f7490fb9dbd0ec0d6a3484",
+  "date": "2026-06-11",
+  "sources": [
+    {
+      "id": "S1",
+      "global_id": "GS32",
+      "title": "Optiml Real Estate Decision Intelligence",
+      "url": "http://optiml.com/",
+      "type": "citation",
+      "excerpts": [
+        "Optiml's Real Estate Decision Intelligence software empowers asset managers, investors & consultancies to optimize Capex planning."
+      ],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3"]
+    },
+    {
+      "id": "S2",
+      "global_id": "GS33",
+      "title": "Simplifying Family Office Real Estate Management (Masttro)",
+      "url": "https://masttro.com/insights/family-office-real-estate-management",
+      "type": "citation",
+      "excerpts": [
+        "Create detailed property profiles – address, acquisition date, legal structure, square footage, and market valuation. Map ownership to trusts, family"
+      ],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "truncated_excerpt"]
+    },
+    {
+      "id": "S3",
+      "global_id": "GS34",
+      "title": "Best leasing automation software for property managers (Rentvine blog)",
+      "url": "https://www.rentvine.com/blog/best-leasing-automation-software",
+      "type": "citation",
+      "excerpts": [
+        "The best leasing automation software centralizes the entire leasing process into one connected workflow. This guide breaks down: What"
+      ],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "truncated_excerpt"]
+    },
+    {
+      "id": "S4",
+      "global_id": "GS35",
+      "title": "Real Estate Database Structure and Schema Diagram (databasesample.com)",
+      "url": "https://databasesample.com/database/real-estate-database",
+      "type": "citation",
+      "excerpts": [
+        "Property Listings: The database should store detailed information about properties, including location, type ( residential , commercial, industrial), size, numb"
+      ],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "truncated_excerpt"]
+    }
+  ],
+  "qa_flags": []
+}

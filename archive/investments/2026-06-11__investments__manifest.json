@@ -1,0 +1,39 @@
+{
+  "domain": "investments",
+  "run_id": "trun_b7d17f0e99f7490f85d1c2105549bd39",
+  "run_created_at": "2026-06-11T15:17:56.510195Z",
+  "run_modified_at": "2026-06-11T15:19:06.492826Z",
+  "date_used": "2026-06-11",
+  "processor": "core-fast",
+  "basis_confidence_reported": "low",
+  "classification": "investments (explicit topic match: 12 investment workflow topics)",
+  "files": [
+    "2026-06-11__investments__source-index.json",
+    "2026-06-11__investments__decision-ready-brief.md",
+    "2026-06-11__investments__note-01.md",
+    "2026-06-11__investments__manifest.json"
+  ],
+  "source_count": 5,
+  "sources_from_run": 0,
+  "sources_from_gap_research": 5,
+  "notes_detected_in_content": 0,
+  "note_files": ["2026-06-11__investments__note-01.md (placeholder: Unknown)"],
+  "dedup_actions": [],
+  "gap_research": {
+    "permission": "allowed",
+    "performed": true,
+    "sources_added": 5,
+    "per_domain_cap": 5,
+    "cap_respected": true,
+    "failed_fetches": ["https://www.sec.gov/about/divisions-offices/division-investment-management/information-newly-registered-investment-advisers"],
+    "topics_covered": [1, 2, 3, 4, 5, 8, 9, 12],
+    "topics_unknown": [6, 7, 10, 11]
+  },
+  "qa_flags": [
+    "missing_citations",
+    "missing_notes",
+    "gap_research_added_source",
+    "gap_research_fetch_failed",
+    "run_output_was_placeholder_only"
+  ]
+}

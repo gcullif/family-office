@@ -1,0 +1,66 @@
+{
+  "domain": "family",
+  "run_id": "trun_b7d17f0e99f7490f9f5c731a90a328ae",
+  "date": "2026-06-11",
+  "sources": [
+    {
+      "id": "S1",
+      "global_id": "GS6",
+      "title": "The FamilySearch GEDCOM Specification (GEDCOM 7)",
+      "url": "https://gedcom.io/specifications/FamilySearchGEDCOMv7.html",
+      "type": "citation",
+      "excerpts": [
+        "GEDCOM 7.0 was released in 2021 as the latest version of the GEDCOM format for the transmission and storage of genealogical information."
+      ],
+      "source_tier": 1,
+      "qa_flags": []
+    },
+    {
+      "id": "S2",
+      "global_id": "GS7",
+      "title": "ISO 15489 Records management",
+      "url": "https://committee.iso.org/sites/tc46sc11/home/projects/published/iso-15489-records-management.html",
+      "type": "citation",
+      "excerpts": [
+        "ISO 15489 establishes the fundamental concepts and principles for creating, capturing, and managing records."
+      ],
+      "source_tier": 1,
+      "qa_flags": []
+    },
+    {
+      "id": "S3",
+      "global_id": "GS8",
+      "title": "EDPB Guidelines 05/2020 on consent under Regulation 2016/679 (Version 1.1)",
+      "url": "https://www.edpb.europa.eu/sites/default/files/files/file1/edpb_guidelines_202005_consent_en.pdf",
+      "type": "citation",
+      "excerpts": [
+        "Article 4(11) of the GDPR defines consent as: “any freely given, specific, informed and unambiguous indication of the data subject's wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her.”",
+        "When providing information society services to children on the basis of consent, controllers will be expected to make reasonable efforts to verify that the user is over the age of digital consent, and these measures should be proportionate to the nature and risks of the processing activities."
+      ],
+      "retrieval_date": "2026-06-11",
+      "source_tier": 1,
+      "qa_flags": ["missing_excerpts_for_source_repaired_via_gap_research"]
+    },
+    {
+      "id": "S4",
+      "global_id": "GS9",
+      "title": "Age appropriate design: a code of practice for online services (ICO, UK)",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/age-appropriate-design-a-code-of-practice-for-online-services/",
+      "type": "mentioned_url",
+      "excerpts": [],
+      "source_tier": 1,
+      "qa_flags": ["url_without_supporting_excerpt", "gap_research_fetch_failed"]
+    },
+    {
+      "id": "S5",
+      "global_id": "GS10",
+      "title": "Vital Records (U.S. National Archives, NARA)",
+      "url": "https://www.archives.gov/research/guide-to-records/vital-records",
+      "type": "mentioned_url",
+      "excerpts": [],
+      "source_tier": 1,
+      "qa_flags": ["url_without_supporting_excerpt", "gap_research_fetch_failed"]
+    }
+  ],
+  "qa_flags": ["missing_notes"]
+}

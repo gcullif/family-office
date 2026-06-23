@@ -1,0 +1,38 @@
+{
+  "domain": "family",
+  "run_id": "trun_b7d17f0e99f7490f9f5c731a90a328ae",
+  "run_created_at": "2026-06-11T15:16:10.870171Z",
+  "run_modified_at": "2026-06-11T15:17:26.156311Z",
+  "date_used": "2026-06-11",
+  "processor": "core-fast",
+  "basis_confidence_reported": "medium",
+  "classification": "family (genealogy data models, minors' consent, vital records, family records governance)",
+  "files": [
+    "2026-06-11__family__source-index.json",
+    "2026-06-11__family__decision-ready-brief.md",
+    "2026-06-11__family__note-01.md",
+    "2026-06-11__family__manifest.json"
+  ],
+  "source_count": 5,
+  "sources_from_run": 3,
+  "mentioned_urls_from_content": 2,
+  "sources_from_gap_research": 0,
+  "sources_repaired_via_gap_research": 1,
+  "notes_detected_in_content": 0,
+  "note_files": ["2026-06-11__family__note-01.md (placeholder: Unknown)"],
+  "dedup_actions": [],
+  "gap_research": {
+    "permission": "allowed",
+    "performed": true,
+    "sources_repaired": ["S3 (EDPB PDF — two verbatim excerpts verified against fetched document, 2026-06-11)"],
+    "failed_fetches": ["S4 (ICO) — empty response", "S5 (NARA) — empty response"],
+    "per_domain_cap": 5,
+    "cap_respected": true
+  },
+  "qa_flags": [
+    "missing_notes",
+    "missing_excerpts_for_source_repaired_via_gap_research (S3)",
+    "url_without_supporting_excerpt (S4, S5)",
+    "gap_research_fetch_failed (S4, S5)"
+  ]
+}

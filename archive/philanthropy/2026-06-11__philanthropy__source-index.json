@@ -1,0 +1,41 @@
+{
+  "domain": "philanthropy",
+  "run_id": "trun_b7d17f0e99f7490fb7ed2c2aaa1bf1dd",
+  "date": "2026-06-11",
+  "sources": [
+    {
+      "id": "S1",
+      "global_id": "GS36",
+      "title": "Mission-Related Investing: A Policy and Implementation Guide for Foundation Trustees (Rockefeller Philanthropy Advisors, 2018)",
+      "url": "https://www.rockpa.org/wp-content/uploads/2018/09/Mission-Related-Investing-A-Policy-and-Implementation-Guide-for-Foundation-Trustees.pdf",
+      "type": "citation",
+      "excerpts": [
+        "Building on the values, mission and strategy of your philanthropy, you can select from a wide range of legal and financial entities to realize your goals.",
+        "Have you created a system of checks and balances to ensure that the foundation fulfills its charitable mission and remains in compliance with applicable laws?",
+        "A mission-related investment scoring system can serve as a highly effective tool in assessing risk and distilling key issues into scores which can be used to compare investment",
+        "Mission-related investors need to assess the social impact of potential investments as part of their due diligence process."
+      ],
+      "retrieval_date": "2026-06-11",
+      "source_tier": 2,
+      "qa_flags": ["missing_excerpts_for_source_repaired_via_gap_research"]
+    }
+  ],
+  "unverified_embedded_quotes": [
+    {
+      "quote": "The MRI Evaluator is designed to work in conjunction with a formal investment due diligence process.",
+      "status": "not found in fetched document text",
+      "qa_flags": ["quote_not_verified", "unsupported_claim"]
+    },
+    {
+      "quote": "A scoring system is included for each question, allowing the user to establish a more objective framework for evaluating MRI investments.",
+      "status": "not found in fetched document text",
+      "qa_flags": ["quote_not_verified", "unsupported_claim"]
+    },
+    {
+      "quote": "Investment Monitoring & Reporting",
+      "status": "not located verbatim in fetched document text",
+      "qa_flags": ["quote_not_verified"]
+    }
+  ],
+  "qa_flags": ["missing_notes", "single_source_domain"]
+}

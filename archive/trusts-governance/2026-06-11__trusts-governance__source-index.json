@@ -1,0 +1,57 @@
+{
+  "domain": "trusts-governance",
+  "run_id": "trun_b7d17f0e99f7490facd0b688cbafe751",
+  "date": "2026-06-11",
+  "sources": [
+    {
+      "id": "S1",
+      "global_id": "GS28",
+      "title": "Family Office Governance: Best Practice (Forbes, contributor)",
+      "url": "https://www.forbes.com/sites/paulwestall/2023/01/24/family-office-governance-best-practice/",
+      "type": "citation",
+      "excerpts": [],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source", "gap_research_not_attempted_low_value_source"]
+    },
+    {
+      "id": "S2",
+      "global_id": "GS29",
+      "title": "Trust Administration Checklist and Guide (Keystone Law Group)",
+      "url": "https://keystone-law.com/trust-administration-checklist-and-guide",
+      "type": "citation",
+      "excerpts": [
+        "As detailed in California Probate Code section 16062, the trustee must maintain accounting records that include every transaction made in the trust. They must also send updates to the beneficiaries regarding the trust administration process.",
+        "As a fiduciary, the trustee is required to put the needs of the beneficiaries first, and part of that commitment is to ensure that payments are made promptly and consistently, every time they’re due."
+      ],
+      "retrieval_date": "2026-06-11",
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source_repaired_via_gap_research", "jurisdiction_specific_california"]
+    },
+    {
+      "id": "S3",
+      "global_id": "GS30",
+      "title": "How a New Trust Company Scaled a Specialized Operating Model with WealthHub",
+      "url": "https://wealthhubsolutions.com/how-a-new-trust-company-scaled-a-specialized-operating-model-with-wealthhub/",
+      "type": "citation",
+      "excerpts": [],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source", "gap_research_not_attempted_low_value_source"]
+    },
+    {
+      "id": "S4",
+      "global_id": "GS31",
+      "title": "trustee | Wex | US Law | LII / Legal Information Institute (Cornell Law School)",
+      "url": "https://www.law.cornell.edu/wex/trustee",
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpts": [
+        "Trustees should perform their duties from trust instruments, are guided by laws, and their performance should be solely in the best interest of the beneficiary.",
+        "Trustees cannot mix trust assets with their own, thus, they should have separate accounts for management and investment. Keeping clear and accurate records of assets management is also required.",
+        "Meanwhile, if there are multiple beneficiaries, the trustee should act impartially instead of favoring anyone over others."
+      ],
+      "source_tier": 1,
+      "qa_flags": ["gap_research_added_source"]
+    }
+  ],
+  "qa_flags": []
+}

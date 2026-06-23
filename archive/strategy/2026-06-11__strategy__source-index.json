@@ -1,0 +1,80 @@
+{
+  "domain": "strategy",
+  "run_id": "trun_b7d17f0e99f7490fa1ac571174e10bff",
+  "date": "2026-06-11",
+  "sources": [
+    {
+      "id": "S1",
+      "global_id": "GS17",
+      "title": "When family office meets family business: Best practices (Plante Moran)",
+      "url": "https://www.plantemoran.com/explore-our-thinking/insight/2024/01/when-family-office-meets-family-business",
+      "type": "citation",
+      "excerpts": [
+        "n effective governance model is the cornerstone of a successful family office operating within a business . Your family office structure"
+      ],
+      "source_tier": 2,
+      "qa_flags": ["truncated_excerpt"]
+    },
+    {
+      "id": "S2",
+      "global_id": "GS18",
+      "title": "Family office investment strategy: A long-term wealth plan (Aleta)",
+      "url": "https://aleta.io/knowledge-hub/family-office-investment-strategy",
+      "type": "citation",
+      "excerpts": [
+        "The four key components of a family office investment strategy are values-based customization, strategic asset allocation, risk management, and liquidity"
+      ],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "truncated_excerpt"]
+    },
+    {
+      "id": "S3",
+      "global_id": "GS19",
+      "title": "Building a Family Office: A Strategic Approach to Wealth Management (Koley Jessen / kplaw.com)",
+      "url": "https://www.kplaw.com/news/news-and-updates/2025/03/building-a-family-office-a-strategic-approach-to-wealth-management/",
+      "type": "citation",
+      "excerpts": [
+        "Building a family office requires careful planning, a clear vision, and a strong governance structure to ensure long-term wealth sustainability."
+      ],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3"]
+    },
+    {
+      "id": "S4",
+      "global_id": "GS20",
+      "title": "What is family office governance and why does it matter? (Sage blog)",
+      "url": "https://www.sage.com/en-us/blog/family-office-governance/",
+      "type": "citation",
+      "excerpts": [
+        "It defines who has authority over wealth management, how family members communicate about financial matters, and what processes guide everything"
+      ],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "truncated_excerpt"]
+    },
+    {
+      "id": "S5",
+      "global_id": "GS21",
+      "title": "How to Build a Family Office Decision Framework (Phoenix Strategy Group blog)",
+      "url": "https://www.phoenixstrategy.group/blog/how-to-build-a-family-office-decision-framework",
+      "type": "citation",
+      "excerpts": [
+        "Detailed meeting minutes should capture major decisions, action items, and the reasoning behind them. This creates a record that helps newer"
+      ],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "truncated_excerpt"]
+    },
+    {
+      "id": "S6",
+      "global_id": "GS22",
+      "title": "Stewardship Investment Planning – LinkedIn Company Page",
+      "url": "http://linkedin.com/company/stewardship-investment-planning",
+      "type": "citation",
+      "excerpts": [
+        "Stewardship Investment Planning is a Wealth Management and Family Office company."
+      ],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "low_relevance_source"]
+    }
+  ],
+  "qa_flags": []
+}

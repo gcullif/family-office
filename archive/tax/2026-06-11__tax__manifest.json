@@ -1,0 +1,61 @@
+{
+  "domain": "tax",
+  "run_id": "trun_b7d17f0e99f7490f8fca2c4dab560d7f",
+  "run_created_at": "2026-06-11T15:26:59.812301Z",
+  "run_modified_at": "2026-06-11T15:27:55.101065Z",
+  "date_used": "2026-06-11",
+  "version": 2,
+  "supersedes": "_archived-old-versions/ (v1 files archived 2026-06-11)",
+  "processor": "core-fast",
+  "basis_confidence_reported": "medium",
+  "classification": "tax (tax module & workflow design, NOTES 1-8, evidence-repaired)",
+  "files": [
+    "2026-06-11__tax__source-index.json",
+    "2026-06-11__tax__decision-ready-brief.md",
+    "2026-06-11__tax__note-01.md",
+    "2026-06-11__tax__note-02.md",
+    "2026-06-11__tax__note-03.md",
+    "2026-06-11__tax__note-04.md",
+    "2026-06-11__tax__note-05.md",
+    "2026-06-11__tax__note-06.md",
+    "2026-06-11__tax__note-07.md",
+    "2026-06-11__tax__note-08.md",
+    "2026-06-11__tax__manifest.json"
+  ],
+  "source_count": 17,
+  "sources_from_run": 4,
+  "sources_from_gap_research": 12,
+  "sources_reused_cross_domain": 1,
+  "notes_detected_in_content": 8,
+  "note_files_are_v2_evidence_graded": true,
+  "v1_verbatim_notes_archived": true,
+  "dedup_actions": ["ISO 15489 deduplicated to existing GS7 (no new global ID)"],
+  "gap_research": {
+    "permission": "allowed",
+    "performed": true,
+    "cap_new_sources": 25,
+    "new_sources_added": 11,
+    "sources_added": ["S6 IRS recordkeeping hub", "S7 IRS what-kind-of-records", "S8 IRS burden of proof", "S9 26 USC 6001", "S10 26 USC 7216", "S11 IRS 1099 information returns", "S12 IRS K-1 partner instructions", "S13 IRS About Form 2848", "S14 NIST least privilege", "S15 NIST separation of duty", "S16 NIST audit trail"],
+    "failed_fetches": ["https://www.irs.gov/forms-pubs/about-schedule-k-1-form-1065", "https://pcaobus.org/oversight-inspections/standards/auditing-standards/details/AS1215"],
+    "cap_respected": true
+  },
+  "notes_coverage": {
+    "note_1": ["S5", "S6", "S9", "S11"],
+    "note_2": ["S7", "S11", "S12"],
+    "note_3": ["S7", "S8", "S9"],
+    "note_4": ["S10", "S13", "S14"],
+    "note_5": ["S5", "S6", "S8", "S16", "S17"],
+    "note_6": ["S5", "S7", "S8", "S9"],
+    "note_7": [],
+    "note_8": ["S14", "S15", "S16"]
+  },
+  "qa_flags": [
+    "missing_excerpts_for_source (S1-S4, context_only)",
+    "weak_source_tier_3 (S1-S4)",
+    "gap_research_added_source (S5-S16)",
+    "gap_research_fetch_failed (IRS About K-1 page, PCAOB AS 1215)",
+    "unsupported_topic (NOTE 7)",
+    "unsupported_claim (all [INFERENCE] design-layer bullets)",
+    "excerpts_are_clause_fragments_of_statutory_sentence (S10)"
+  ]
+}

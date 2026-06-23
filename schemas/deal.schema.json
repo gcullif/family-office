@@ -1,0 +1,249 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://familyoffice.local/schemas/deal.schema.json",
+  "title": "Deal",
+  "description": "Canonical record for a single investment — created at approval, never overwritten. Corrections create a new version with supersedes_ref.",
+  "type": "object",
+  "required": [
+    "id",
+    "slug",
+    "name",
+    "type",
+    "status",
+    "barbell_layer",
+    "entity",
+    "provenance",
+    "thesis_summary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID v4. Generated at record creation. Never changes.",
+      "examples": ["a1b2c3d4-e5f6-7890-abcd-ef1234567890"]
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "URL-safe kebab-case identifier. Used in all file paths. Example: acme-corp-series-b",
+      "examples": ["acme-corp-series-b", "downtown-loft-portfolio", "vtsax-index-fund"]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable deal name. Example: 'Acme Corp — Series B'",
+      "examples": ["Acme Corp — Series B", "Downtown Loft Portfolio", "VTSAX Index Fund Position"]
+    },
+    "type": {
+      "type": "string",
+      "enum": ["VC", "PE", "real-estate", "credit", "operating-business", "public-equity", "fund-of-funds", "money-market"],
+      "description": "Asset class / deal type."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["prospect", "active", "realized", "written-off", "archived"],
+      "description": "Lifecycle state. 'prospect' = pre-investment eval. 'active' = capital deployed. 'realized' = full exit. 'written-off' = total loss. 'archived' = rejected during eval."
+    },
+    "barbell_layer": {
+      "type": "string",
+      "enum": ["liquidity-runway", "defensive-compounding", "power-law-bet"],
+      "description": "Which layer of the barbell this deal sits in. Determines monitoring cadence and risk tolerance."
+    },
+    "entity": {
+      "type": "string",
+      "description": "Legal entity that holds this investment. Example: 'Smith Family Office LLC', 'Smith Family Trust'",
+      "examples": ["Smith Family Office LLC", "Smith Family Trust", "GC Investments LP"]
+    },
+    "sector": {
+      "type": "string",
+      "description": "Industry/sector. Freeform but prefer standard labels: fintech, healthtech, saas, real-estate, energy, consumer, industrials, public-equity, fixed-income.",
+      "examples": ["fintech", "saas", "real-estate", "public-equity"]
+    },
+    "geography": {
+      "type": "string",
+      "description": "Primary geographic exposure. Example: 'US-West', 'US-National', 'Southeast Asia'.",
+      "examples": ["US-West", "US-National", "Europe"]
+    },
+    "ticker": {
+      "type": ["string", "null"],
+      "description": "Exchange ticker symbol for public securities. Null for private deals.",
+      "examples": ["VTSAX", "AAPL", null]
+    },
+    "domain": {
+      "type": ["string", "null"],
+      "description": "Primary web domain of the company. Used for deterministic deal matching in ingestion pipeline.",
+      "examples": ["acmecorp.com", "horizonvc.com", null]
+    },
+    "investment_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "ISO 8601 date of initial capital deployment. Null if status=prospect.",
+      "examples": ["2024-03-15", null]
+    },
+    "initial_amount_usd": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Initial investment amount in USD. Null if status=prospect.",
+      "examples": [500000, 100000, null]
+    },
+    "current_value_usd": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Most recent estimated fair value in USD. Populated by valuation pipeline. Null until first valuation.",
+      "examples": [650000, 95000, null]
+    },
+    "ownership_pct": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Percent ownership stake. Null for funds or public equity where ownership pct is not tracked.",
+      "examples": [2.5, 0.1, null]
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Who created this record, when, from what source. Required on every record.",
+      "required": ["source", "timestamp_utc", "author", "file_hash"],
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Where the deal information came from. Example: 'LP intro email from John Smith', 'Inbound deck via AngelList'",
+          "examples": ["LP intro email from John Smith 2024-03-01", "Inbound pitch deck via AngelList"]
+        },
+        "timestamp_utc": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 UTC datetime when this record was created.",
+          "examples": ["2024-03-15T14:22:00Z"]
+        },
+        "author": {
+          "type": "string",
+          "description": "Email or name of person who created this record.",
+          "examples": ["grayson.culliford@hivefs.com", "Jane Doe"]
+        },
+        "file_hash": {
+          "type": "string",
+          "description": "SHA-256 hash of this JSON file at creation time. First 8 chars used in filename.",
+          "examples": ["a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2"]
+        },
+        "links": {
+          "type": "array",
+          "description": "Supporting URLs (Notion page, data room link, AngelList, Crunchbase, etc.)",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "examples": [["https://notion.so/deal-acme", "https://www.crunchbase.com/organization/acme-corp"]]
+        }
+      }
+    },
+    "contacts": {
+      "type": "array",
+      "description": "Key contacts associated with this deal. Used for deal matching in ingestion pipeline.",
+      "items": {
+        "type": "object",
+        "required": ["name", "email", "role"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "examples": ["Jane Smith", "Bob Johnson"]
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "examples": ["jane@acmecorp.com", "bob@horizonvc.com"]
+          },
+          "role": {
+            "type": "string",
+            "description": "Their role in this deal context.",
+            "examples": ["CEO", "General Partner", "Property Manager", "IR Contact"]
+          },
+          "phone": {
+            "type": ["string", "null"],
+            "examples": ["+1-415-555-0100", null]
+          }
+        }
+      }
+    },
+    "deal_doc_pointers": {
+      "type": "array",
+      "description": "Pointers to sensitive documents stored outside the repo (S3, GDrive). Never store actual PDFs in git.",
+      "items": {
+        "type": "object",
+        "required": ["label", "storage", "key"],
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Human-readable document label.",
+            "examples": ["Term Sheet", "Subscription Agreement", "Cap Table", "PPM"]
+          },
+          "storage": {
+            "type": "string",
+            "enum": ["s3", "gdrive", "dropbox", "local"],
+            "description": "Storage backend."
+          },
+          "key": {
+            "type": "string",
+            "description": "Path or ID within the storage backend.",
+            "examples": ["deals/acme-corp/term-sheet-2024-03.pdf", "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms"]
+          },
+          "sha256": {
+            "type": ["string", "null"],
+            "description": "SHA-256 of the stored file for integrity verification.",
+            "examples": ["e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", null]
+          },
+          "uploaded_at": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "thesis_summary": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Plain-language explanation of why we made this investment. Should be readable by a family member with no finance background. Required on all active deals.",
+      "examples": [
+        "Acme Corp is a B2B SaaS company selling expense management software to mid-market companies. We invested in their Series B because the team has strong prior exits, the market is large ($8B TAM), and their net revenue retention of 118% suggests a sticky product. This is a power-law bet — we expect either a significant return or zero.",
+        "VTSAX tracks the entire US stock market. We hold this as our core defensive compounding position because it gives broad diversification at near-zero cost (0.04% expense ratio). It will grow with the US economy over time."
+      ]
+    },
+    "risk_factors": {
+      "type": "array",
+      "description": "Known risks specific to this deal. Each entry is a plain-language statement.",
+      "items": {
+        "type": "string"
+      },
+      "examples": [
+        ["Key-person risk: 70% of revenue tied to CEO relationships", "Series C may be difficult in current market", "Only 9 months runway at current burn rate"]
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "description": "Freeform tags for search and filtering.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "examples": [["saas", "series-b", "enterprise", "power-law-bet", "2024"]]
+    },
+    "supersedes_ref": {
+      "type": ["string", "null"],
+      "description": "Path to the previous version of this deal record, if this is a correction/update.",
+      "examples": ["deals/acme-corp-series-b/deal_v1_2024-03-15.json", null]
+    },
+    "ic_memo_path": {
+      "type": ["string", "null"],
+      "description": "Relative path to the IC memo for this deal.",
+      "examples": ["deals/acme-corp-series-b/ic_memo.md", null]
+    },
+    "latest_valuation_ref": {
+      "type": ["string", "null"],
+      "description": "Relative path to the most recent valuation record.",
+      "examples": ["valuations/acme-corp-series-b/valuation_2026-06-23_a1b2c3d4.json", null]
+    }
+  }
+}

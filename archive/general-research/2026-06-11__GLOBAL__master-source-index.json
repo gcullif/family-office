@@ -1,0 +1,680 @@
+{
+  "scope": "GLOBAL",
+  "date": "2026-06-11",
+  "dedup_method": "by URL across all 8 domain blobs (no cross-domain URL duplicates found); runs deduplicated by run_id (all 8 unique)",
+  "excerpt_detail": "verbatim excerpts are held in each domain source-index.json; this master index is the deduped crosswalk",
+  "sources": [
+    {
+      "gs_id": "GS1",
+      "domain": "investments",
+      "domain_id": "S1",
+      "title": "Asset Allocation and Diversification | Investor.gov (U.S. SEC)",
+      "url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 3,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS2",
+      "domain": "investments",
+      "domain_id": "S2",
+      "title": "Due Diligence Questionnaire | ILPA",
+      "url": "https://ilpa.org/resources-tools/resource-library/due-diligence-questionnaire/",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS3",
+      "domain": "investments",
+      "domain_id": "S3",
+      "title": "IPEV Valuation Guidelines",
+      "url": "https://www.privateequityvaluation.com/Valuation-Guidelines",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 3,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS4",
+      "domain": "investments",
+      "domain_id": "S4",
+      "title": "About Us - GIPS (CFA Institute)",
+      "url": "https://www.gipsstandards.org/about-us/",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 2,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS5",
+      "domain": "investments",
+      "domain_id": "S5",
+      "title": "17 CFR 275.206(4)-7 Compliance procedures and practices (eCFR)",
+      "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.206(4)-7",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 3,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS6",
+      "domain": "family",
+      "domain_id": "S1",
+      "title": "The FamilySearch GEDCOM Specification (GEDCOM 7)",
+      "url": "https://gedcom.io/specifications/FamilySearchGEDCOMv7.html",
+      "tier": 1,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": []
+    },
+    {
+      "gs_id": "GS7",
+      "domain": [
+        "family",
+        "tax"
+      ],
+      "domain_id": "S2",
+      "title": "ISO 15489 Records management",
+      "url": "https://committee.iso.org/sites/tc46sc11/home/projects/published/iso-15489-records-management.html",
+      "tier": 1,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [],
+      "note": "reused in tax domain source index as S17 (cross_domain_reuse)"
+    },
+    {
+      "gs_id": "GS8",
+      "domain": "family",
+      "domain_id": "S3",
+      "title": "EDPB Guidelines 05/2020 on consent under Regulation 2016/679",
+      "url": "https://www.edpb.europa.eu/sites/default/files/files/file1/edpb_guidelines_202005_consent_en.pdf",
+      "tier": 1,
+      "type": "citation",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 2,
+      "qa_flags": [
+        "missing_excerpts_for_source_repaired_via_gap_research"
+      ]
+    },
+    {
+      "gs_id": "GS9",
+      "domain": "family",
+      "domain_id": "S4",
+      "title": "Age appropriate design code (ICO)",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/age-appropriate-design-a-code-of-practice-for-online-services/",
+      "tier": 1,
+      "type": "mentioned_url",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "url_without_supporting_excerpt",
+        "gap_research_fetch_failed"
+      ]
+    },
+    {
+      "gs_id": "GS10",
+      "domain": "family",
+      "domain_id": "S5",
+      "title": "Vital Records (NARA)",
+      "url": "https://www.archives.gov/research/guide-to-records/vital-records",
+      "tier": 1,
+      "type": "mentioned_url",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "url_without_supporting_excerpt",
+        "gap_research_fetch_failed"
+      ]
+    },
+    {
+      "gs_id": "GS11",
+      "domain": "general-research",
+      "domain_id": "S1",
+      "title": "MoSCoW Prioritization | Glossary - ProductPlan",
+      "url": "https://www.productplan.com/glossary/moscow-prioritization",
+      "tier": 3,
+      "type": "citation",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source_repaired_via_gap_research"
+      ]
+    },
+    {
+      "gs_id": "GS12",
+      "domain": "general-research",
+      "domain_id": "S2",
+      "title": "RESEARCH PROJECT INTAKE FORM TEMPLATE (Smartsheet)",
+      "url": "http://smartsheet.com/sites/default/files/2022-04/IC-Research-Project-Intake-Form-11354_PDF.pdf",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 3,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "fragmentary_excerpts"
+      ]
+    },
+    {
+      "gs_id": "GS13",
+      "domain": "general-research",
+      "domain_id": "S3",
+      "title": "What Is Digital Provenance? (TrueScreen)",
+      "url": "https://truescreen.io/articles/digital-provenance/",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source"
+      ]
+    },
+    {
+      "gs_id": "GS14",
+      "domain": "general-research",
+      "domain_id": "S4",
+      "title": "Evaluating Online Sources: Red Flags (Avenues LibGuides)",
+      "url": "https://avenues.libguides.com/c.php?g=1326123&p=9766508",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source"
+      ]
+    },
+    {
+      "gs_id": "GS15",
+      "domain": "general-research",
+      "domain_id": "S5",
+      "title": "Quote Extraction And Attribution - CoreNLP (Stanford)",
+      "url": "https://stanfordnlp.github.io/CoreNLP/quote.html",
+      "tier": 2,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": []
+    },
+    {
+      "gs_id": "GS16",
+      "domain": "general-research",
+      "domain_id": "S6",
+      "title": "The Trust Layer for a Verified Internet (OpenOrigins)",
+      "url": "http://openorigins.com/products/secure-source",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source"
+      ]
+    },
+    {
+      "gs_id": "GS17",
+      "domain": "strategy",
+      "domain_id": "S1",
+      "title": "When family office meets family business (Plante Moran)",
+      "url": "https://www.plantemoran.com/explore-our-thinking/insight/2024/01/when-family-office-meets-family-business",
+      "tier": 2,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "truncated_excerpt"
+      ]
+    },
+    {
+      "gs_id": "GS18",
+      "domain": "strategy",
+      "domain_id": "S2",
+      "title": "Family office investment strategy (Aleta)",
+      "url": "https://aleta.io/knowledge-hub/family-office-investment-strategy",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "truncated_excerpt"
+      ]
+    },
+    {
+      "gs_id": "GS19",
+      "domain": "strategy",
+      "domain_id": "S3",
+      "title": "Building a Family Office (kplaw.com)",
+      "url": "https://www.kplaw.com/news/news-and-updates/2025/03/building-a-family-office-a-strategic-approach-to-wealth-management/",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "weak_source_tier_3"
+      ]
+    },
+    {
+      "gs_id": "GS20",
+      "domain": "strategy",
+      "domain_id": "S4",
+      "title": "What is family office governance (Sage blog)",
+      "url": "https://www.sage.com/en-us/blog/family-office-governance/",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "truncated_excerpt"
+      ]
+    },
+    {
+      "gs_id": "GS21",
+      "domain": "strategy",
+      "domain_id": "S5",
+      "title": "How to Build a Family Office Decision Framework (Phoenix Strategy Group)",
+      "url": "https://www.phoenixstrategy.group/blog/how-to-build-a-family-office-decision-framework",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "truncated_excerpt"
+      ]
+    },
+    {
+      "gs_id": "GS22",
+      "domain": "strategy",
+      "domain_id": "S6",
+      "title": "Stewardship Investment Planning - LinkedIn Company Page",
+      "url": "http://linkedin.com/company/stewardship-investment-planning",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "low_relevance_source"
+      ]
+    },
+    {
+      "gs_id": "GS23",
+      "domain": "tax",
+      "domain_id": "S1",
+      "title": "Big Data Aggregation Changing the Face of Client Write-Up (Thomson Reuters blog)",
+      "url": "https://tax.thomsonreuters.com/blog/big-data-aggregation-changing-the-face-of-client-write-up/",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source",
+        "context_only_not_fact_support"
+      ]
+    },
+    {
+      "gs_id": "GS24",
+      "domain": "tax",
+      "domain_id": "S2",
+      "title": "AI-Powered Automation for Complex Schedule K-1 Tax Data (K1x)",
+      "url": "https://k1x.io/k-1-analysis-software-ai-powered-automation-for-complex-schedule-k-1-tax-data/",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source",
+        "context_only_not_fact_support"
+      ]
+    },
+    {
+      "gs_id": "GS25",
+      "domain": "tax",
+      "domain_id": "S3",
+      "title": "10 Manual Data Aggregation Challenges & Solutions in 2026 (Asora)",
+      "url": "https://www.asora.com/blog/top-10-family-office-data-aggregation-reporting-challenges",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source",
+        "context_only_not_fact_support"
+      ]
+    },
+    {
+      "gs_id": "GS26",
+      "domain": "tax",
+      "domain_id": "S4",
+      "title": "K-1 Data Processing: AI-Powered Automation for High-Volume Tax Teams (K1x)",
+      "url": "https://k1x.io/k-1-data-processing-ai-powered-automation-for-high-volume-tax-teams/",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source",
+        "context_only_not_fact_support"
+      ]
+    },
+    {
+      "gs_id": "GS27",
+      "domain": "tax",
+      "domain_id": "S5",
+      "title": "How long should I keep records? (IRS)",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 4,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS28",
+      "domain": "trusts-governance",
+      "domain_id": "S1",
+      "title": "Family Office Governance: Best Practice (Forbes contributor)",
+      "url": "https://www.forbes.com/sites/paulwestall/2023/01/24/family-office-governance-best-practice/",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source"
+      ]
+    },
+    {
+      "gs_id": "GS29",
+      "domain": "trusts-governance",
+      "domain_id": "S2",
+      "title": "Trust Administration Checklist and Guide (Keystone Law Group)",
+      "url": "https://keystone-law.com/trust-administration-checklist-and-guide",
+      "tier": 3,
+      "type": "citation",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 2,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source_repaired_via_gap_research",
+        "jurisdiction_specific_california"
+      ]
+    },
+    {
+      "gs_id": "GS30",
+      "domain": "trusts-governance",
+      "domain_id": "S3",
+      "title": "How a New Trust Company Scaled a Specialized Operating Model (WealthHub)",
+      "url": "https://wealthhubsolutions.com/how-a-new-trust-company-scaled-a-specialized-operating-model-with-wealthhub/",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 0,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "missing_excerpts_for_source"
+      ]
+    },
+    {
+      "gs_id": "GS31",
+      "domain": "trusts-governance",
+      "domain_id": "S4",
+      "title": "trustee | Wex | Cornell LII",
+      "url": "https://www.law.cornell.edu/wex/trustee",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 3,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS32",
+      "domain": "real-assets",
+      "domain_id": "S1",
+      "title": "Optiml Real Estate Decision Intelligence",
+      "url": "http://optiml.com/",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "weak_source_tier_3"
+      ]
+    },
+    {
+      "gs_id": "GS33",
+      "domain": "real-assets",
+      "domain_id": "S2",
+      "title": "Simplifying Family Office Real Estate Management (Masttro)",
+      "url": "https://masttro.com/insights/family-office-real-estate-management",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "truncated_excerpt"
+      ]
+    },
+    {
+      "gs_id": "GS34",
+      "domain": "real-assets",
+      "domain_id": "S3",
+      "title": "Best leasing automation software (Rentvine)",
+      "url": "https://www.rentvine.com/blog/best-leasing-automation-software",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "truncated_excerpt"
+      ]
+    },
+    {
+      "gs_id": "GS35",
+      "domain": "real-assets",
+      "domain_id": "S4",
+      "title": "Real Estate Database Structure and Schema Diagram (databasesample.com)",
+      "url": "https://databasesample.com/database/real-estate-database",
+      "tier": 3,
+      "type": "citation",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "weak_source_tier_3",
+        "truncated_excerpt"
+      ]
+    },
+    {
+      "gs_id": "GS36",
+      "domain": "philanthropy",
+      "domain_id": "S1",
+      "title": "Mission-Related Investing: A Policy and Implementation Guide for Foundation Trustees (Rockefeller Philanthropy Advisors)",
+      "url": "https://www.rockpa.org/wp-content/uploads/2018/09/Mission-Related-Investing-A-Policy-and-Implementation-Guide-for-Foundation-Trustees.pdf",
+      "tier": 2,
+      "type": "citation",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 4,
+      "qa_flags": [
+        "missing_excerpts_for_source_repaired_via_gap_research",
+        "quote_not_verified (2 embedded quotes)"
+      ]
+    },
+    {
+      "gs_id": "GS37",
+      "domain": "tax",
+      "domain_id": "S6",
+      "title": "Recordkeeping (IRS small business hub)",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/recordkeeping",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 3,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS38",
+      "domain": "tax",
+      "domain_id": "S7",
+      "title": "What kind of records should I keep (IRS)",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/what-kind-of-records-should-i-keep",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 6,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS39",
+      "domain": "tax",
+      "domain_id": "S8",
+      "title": "Burden of proof (IRS)",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/burden-of-proof",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 2,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS40",
+      "domain": "tax",
+      "domain_id": "S9",
+      "title": "26 U.S. Code § 6001 (Cornell LII)",
+      "url": "https://www.law.cornell.edu/uscode/text/26/6001",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS41",
+      "domain": "tax",
+      "domain_id": "S10",
+      "title": "26 U.S. Code § 7216 (Cornell LII)",
+      "url": "https://www.law.cornell.edu/uscode/text/26/7216",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 3,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS42",
+      "domain": "tax",
+      "domain_id": "S11",
+      "title": "Am I required to file a Form 1099 or other information return? (IRS)",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 3,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS43",
+      "domain": "tax",
+      "domain_id": "S12",
+      "title": "Partner's Instructions for Schedule K-1 (Form 1065) (2025) (IRS)",
+      "url": "https://www.irs.gov/instructions/i1065sk1",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 3,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS44",
+      "domain": "tax",
+      "domain_id": "S13",
+      "title": "About Form 2848, Power of Attorney and Declaration of Representative (IRS)",
+      "url": "https://www.irs.gov/forms-pubs/about-form-2848",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 2,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS45",
+      "domain": "tax",
+      "domain_id": "S14",
+      "title": "least privilege - Glossary (NIST CSRC)",
+      "url": "https://csrc.nist.gov/glossary/term/least_privilege",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 1,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS46",
+      "domain": "tax",
+      "domain_id": "S15",
+      "title": "Separation of Duty (SOD) - Glossary (NIST CSRC)",
+      "url": "https://csrc.nist.gov/glossary/term/separation_of_duty",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 2,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    },
+    {
+      "gs_id": "GS47",
+      "domain": "tax",
+      "domain_id": "S16",
+      "title": "audit trail - Glossary (NIST CSRC)",
+      "url": "https://csrc.nist.gov/glossary/term/audit_trail",
+      "tier": 1,
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpt_count": 2,
+      "qa_flags": [
+        "gap_research_added_source"
+      ]
+    }
+  ],
+  "totals": {
+    "sources": 47,
+    "tier_1": 23,
+    "tier_2": 3,
+    "tier_3": 21,
+    "gap_research_added": 19,
+    "repaired_via_gap_research": 5,
+    "missing_excerpts_unrepaired": 10
+  },
+  "qa_flags": [
+    "no_cross_domain_url_duplicates",
+    "no_duplicate_run_ids",
+    "tax_domain_v2_evidence_repair_2026-06-11"
+  ]
+}

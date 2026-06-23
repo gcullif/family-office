@@ -1,0 +1,88 @@
+{
+  "domain": "investments",
+  "run_id": "trun_b7d17f0e99f7490f85d1c2105549bd39",
+  "date": "2026-06-11",
+  "note": "Original run contained zero citations (output.basis[0].citations = []). All sources below were added via bounded gap research per Gap_Research_Permission=allowed (investments special case).",
+  "sources": [
+    {
+      "id": "S1",
+      "global_id": "GS1",
+      "title": "Asset Allocation and Diversification | Investor.gov (U.S. SEC, Office of Investor Education)",
+      "url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation",
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpts": [
+        "Asset allocation involves dividing your investments among different assets, such as stocks, bonds, and cash. The asset allocation decision is a personal one.",
+        "Over time, some investments will grow faster than others. This may push your holdings out of alignment with your investment goals and change the risk level of your portfolio. To bring your portfolio back to its original asset allocation, you may need to rebalance your portfolio.",
+        "When determining your asset allocation, consider diversification— the practice of spreading money among different investments to reduce risk."
+      ],
+      "source_tier": 1,
+      "qa_flags": ["gap_research_added_source"]
+    },
+    {
+      "id": "S2",
+      "global_id": "GS2",
+      "title": "Due Diligence Questionnaire | Institutional Limited Partners Association (ILPA)",
+      "url": "https://ilpa.org/resources-tools/resource-library/due-diligence-questionnaire/",
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpts": [
+        "The ILPA DDQ and Diversity Metrics Template are intended to standardize the key areas of inquiry posed by investors during their diligence of managers and to provide a framework for ongoing monitoring of progress related to DEI."
+      ],
+      "source_tier": 1,
+      "qa_flags": ["gap_research_added_source"]
+    },
+    {
+      "id": "S3",
+      "global_id": "GS3",
+      "title": "IPEV Valuation Guidelines (International Private Equity and Venture Capital Valuation Guidelines)",
+      "url": "https://www.privateequityvaluation.com/Valuation-Guidelines",
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpts": [
+        "The International Private Equity and Venture Capital Valuation (IPEV) Guidelines set out recommendations, intended to represent current best practice, on the valuation of Private Capital Investments.",
+        "The objective of these Valuation Guidelines is to set out best practice where Private Capital Investments are reported at ‘Fair Value’ and hence to help investors in Private Capital Funds make better economic decisions.",
+        "The 2025 edition of the IPEV Guidelines were published on 11 December 2025"
+      ],
+      "source_tier": 1,
+      "qa_flags": ["gap_research_added_source"]
+    },
+    {
+      "id": "S4",
+      "global_id": "GS4",
+      "title": "About Us - GIPS (Global Investment Performance Standards, CFA Institute)",
+      "url": "https://www.gipsstandards.org/about-us/",
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpts": [
+        "we champion standards for calculating and presenting investment performance based on the ethical principles of fair representation and full disclosure.",
+        "The GIPS Standards are developed, maintained and promoted by CFA Institute, the GIPS Standards Sponsors, and GIPS Standards Committees."
+      ],
+      "source_tier": 1,
+      "qa_flags": ["gap_research_added_source"]
+    },
+    {
+      "id": "S5",
+      "global_id": "GS5",
+      "title": "17 CFR 275.206(4)-7 — Compliance procedures and practices (eCFR, U.S. SEC)",
+      "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.206(4)-7",
+      "type": "gap_research_added",
+      "retrieval_date": "2026-06-11",
+      "excerpts": [
+        "Adopt and implement written policies and procedures reasonably designed to prevent violation, by you and your supervised persons, of the Act and the rules that the Commission has adopted under the Act;",
+        "Review, no less frequently than annually, the adequacy of the policies and procedures established pursuant to this section and the effectiveness of their implementation; and",
+        "Designate an individual (who is a supervised person) responsible for administering the policies and procedures that you adopt under paragraph (a) of this section."
+      ],
+      "source_tier": 1,
+      "qa_flags": ["gap_research_added_source"]
+    }
+  ],
+  "gap_research_failed_attempts": [
+    {
+      "url": "https://www.sec.gov/about/divisions-offices/division-investment-management/information-newly-registered-investment-advisers",
+      "reason": "fetch returned empty content",
+      "qa_flags": ["gap_research_fetch_failed"]
+    }
+  ],
+  "qa_flags": ["missing_citations", "missing_notes", "gap_research_added_source"]
+}

@@ -1,0 +1,45 @@
+{
+  "domain": "general-research",
+  "run_id": "trun_b7d17f0e99f7490fad08720fc0a90678",
+  "run_created_at": "2026-06-11T15:27:40.144362Z",
+  "run_modified_at": "2026-06-11T15:28:55.780376Z",
+  "date_used": "2026-06-11",
+  "processor": "core-fast",
+  "basis_confidence_reported": "medium",
+  "classification": "general-research (research operating model & workflows module)",
+  "files": [
+    "2026-06-11__general-research__source-index.json",
+    "2026-06-11__general-research__decision-ready-brief.md",
+    "2026-06-11__general-research__note-01.md",
+    "2026-06-11__general-research__note-02.md",
+    "2026-06-11__general-research__note-03.md",
+    "2026-06-11__general-research__note-04.md",
+    "2026-06-11__general-research__note-05.md",
+    "2026-06-11__general-research__note-06.md",
+    "2026-06-11__general-research__note-07.md",
+    "2026-06-11__general-research__note-08.md",
+    "2026-06-11__general-research__manifest.json"
+  ],
+  "source_count": 6,
+  "sources_from_run": 6,
+  "sources_from_gap_research": 0,
+  "sources_repaired_via_gap_research": 1,
+  "notes_detected_in_content": 8,
+  "dedup_actions": [],
+  "gap_research": {
+    "permission": "allowed",
+    "performed": true,
+    "sources_repaired": ["S1 (ProductPlan MoSCoW — verbatim definition captured 2026-06-11)"],
+    "not_attempted": ["S3", "S4", "S6 (tier-3, low value; cap budget allocated to higher-priority domains)"],
+    "per_domain_cap": 5,
+    "cap_respected": true
+  },
+  "qa_flags": [
+    "missing_excerpts_for_source (S3, S4, S6)",
+    "missing_excerpts_for_source_repaired_via_gap_research (S1)",
+    "weak_source_tier_3 (S1, S2, S3, S4, S6)",
+    "fragmentary_excerpts (S2)",
+    "unsupported_claim (NOTE 1-8 framework content)",
+    "content_outside_note_sections_not_filed_as_notes"
+  ]
+}

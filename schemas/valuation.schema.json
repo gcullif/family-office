@@ -1,0 +1,325 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://familyoffice.local/schemas/valuation.schema.json",
+  "title": "ValuationRecord",
+  "description": "Container for a single valuation event. Triggered by deal updates (earnings, financing round, valuation mark, exit) or by the scheduled quarterly review. Contains input assumptions, results, and human approval status.",
+
+  "definitions": {
+
+    "ValuationInput": {
+      "title": "ValuationInput",
+      "description": "The raw inputs used to compute this valuation.",
+      "type": "object",
+      "required": ["deal_id", "asset_type", "method", "inputs"],
+      "additionalProperties": false,
+      "properties": {
+        "deal_id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "UUID of the parent Deal record."
+        },
+        "update_ref": {
+          "type": ["string", "null"],
+          "description": "Relative path to the DealUpdate that triggered this valuation. Null if triggered manually or by schedule.",
+          "examples": ["deal-updates/2026/07/15/acme-corp-series-b--earnings--email--a3f9b1c2.json", null]
+        },
+        "asset_type": {
+          "type": "string",
+          "enum": ["VC", "PE", "real-estate", "credit", "operating-business", "public-equity", "fund-of-funds", "money-market"],
+          "description": "Asset class — determines which method sub-schema is applicable."
+        },
+        "method": {
+          "type": "string",
+          "enum": ["dcf", "comparable", "nav", "cost-basis", "mark-to-market", "409a", "appraisal", "last-round"],
+          "description": "Valuation methodology used. Guardrail: VC/PE deals <2 years old should default to cost-basis or last-round. Real estate requires appraisal or dcf. Public equity must use mark-to-market."
+        },
+        "inputs": {
+          "type": "object",
+          "description": "Method-specific input parameters. One of the sub-schemas below applies based on 'method'.",
+          "oneOf": [
+            {
+              "title": "DCFInputs",
+              "description": "Applicable when method = dcf",
+              "required": ["projected_cash_flows_usd", "discount_rate_pct", "terminal_growth_rate_pct"],
+              "properties": {
+                "projected_cash_flows_usd": {
+                  "type": "array",
+                  "items": { "type": "number" },
+                  "minItems": 1,
+                  "description": "Annual free cash flow projections in USD. Index 0 = Year 1.",
+                  "examples": [[180000, 220000, 280000, 350000, 430000]]
+                },
+                "discount_rate_pct": {
+                  "type": "number",
+                  "description": "Weighted average cost of capital (WACC) or required rate of return. Guardrail: VC deals typically 25-40%; real estate 8-12%.",
+                  "examples": [25.0, 10.5]
+                },
+                "terminal_growth_rate_pct": {
+                  "type": "number",
+                  "description": "Long-term growth rate for terminal value. Guardrail: should not exceed GDP growth (3%) for mature businesses.",
+                  "examples": [2.5, 3.0]
+                },
+                "terminal_multiple": {
+                  "type": ["number", "null"],
+                  "description": "Exit multiple on final year FCF (alternative terminal value method). If set, overrides terminal_growth_rate_pct.",
+                  "examples": [8.0, null]
+                }
+              }
+            },
+            {
+              "title": "ComparableInputs",
+              "description": "Applicable when method = comparable",
+              "required": ["metric_type", "metric_value", "multiple_used", "comparable_companies"],
+              "properties": {
+                "metric_type": {
+                  "type": "string",
+                  "enum": ["revenue", "ebitda", "arr", "noi", "book-value"],
+                  "description": "The financial metric the multiple is applied to."
+                },
+                "metric_value": {
+                  "type": "number",
+                  "description": "Current period value of the metric in USD.",
+                  "examples": [4200000, 840000]
+                },
+                "multiple_used": {
+                  "type": "number",
+                  "description": "EV/metric multiple applied. Guardrail: document source of comps.",
+                  "examples": [6.5, 12.0]
+                },
+                "comparable_companies": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "description": "Names or tickers of comparable companies used to derive the multiple.",
+                  "examples": [["Expensify (EXFY)", "Brex", "Ramp"]]
+                },
+                "discount_for_illiquidity_pct": {
+                  "type": ["number", "null"],
+                  "description": "Discount applied for illiquidity (private vs. public). Typical range 20-35%.",
+                  "examples": [25.0, null]
+                }
+              }
+            },
+            {
+              "title": "NAVInputs",
+              "description": "Applicable when method = nav (funds, real estate portfolios)",
+              "required": ["reported_nav_usd", "nav_date"],
+              "properties": {
+                "reported_nav_usd": {
+                  "type": "number",
+                  "description": "Net asset value as reported by the fund manager or property manager.",
+                  "examples": [2850000, 85000000]
+                },
+                "nav_date": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "Date as of which the NAV was calculated.",
+                  "examples": ["2026-05-31"]
+                },
+                "family_office_ownership_pct": {
+                  "type": ["number", "null"],
+                  "description": "Family office ownership percentage of the fund/vehicle.",
+                  "examples": [0.59, null]
+                },
+                "unfunded_commitment_usd": {
+                  "type": ["number", "null"],
+                  "description": "Remaining capital commitment not yet called.",
+                  "examples": [200000, null]
+                }
+              }
+            },
+            {
+              "title": "CostBasisInputs",
+              "description": "Applicable when method = cost-basis or last-round",
+              "required": ["cost_basis_usd"],
+              "properties": {
+                "cost_basis_usd": {
+                  "type": "number",
+                  "description": "Total invested capital to date in USD.",
+                  "examples": [500000]
+                },
+                "last_round_pre_money_usd": {
+                  "type": ["number", "null"],
+                  "description": "Pre-money valuation from most recent financing round.",
+                  "examples": [20000000, null]
+                },
+                "last_round_date": {
+                  "type": ["string", "null"],
+                  "format": "date",
+                  "examples": ["2024-03-15", null]
+                },
+                "ownership_pct": {
+                  "type": ["number", "null"],
+                  "examples": [2.5, null]
+                }
+              }
+            },
+            {
+              "title": "MarkToMarketInputs",
+              "description": "Applicable when method = mark-to-market (public equity)",
+              "required": ["ticker", "shares_held", "price_per_share_usd", "price_date"],
+              "properties": {
+                "ticker": {
+                  "type": "string",
+                  "examples": ["VTSAX", "AAPL"]
+                },
+                "shares_held": {
+                  "type": "number",
+                  "examples": [1234.567]
+                },
+                "price_per_share_usd": {
+                  "type": "number",
+                  "examples": [118.45, 192.30]
+                },
+                "price_date": {
+                  "type": "string",
+                  "format": "date",
+                  "examples": ["2026-06-23"]
+                },
+                "cost_basis_per_share_usd": {
+                  "type": ["number", "null"],
+                  "examples": [95.00, null]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+
+    "ValuationResult": {
+      "title": "ValuationResult",
+      "description": "The output of the valuation calculation — low/mid/high range, confidence, and approval status.",
+      "type": "object",
+      "required": ["value_low_usd", "value_mid_usd", "value_high_usd", "confidence", "assumptions", "human_approved"],
+      "additionalProperties": false,
+      "properties": {
+        "value_low_usd": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Conservative (bear case) estimated value in USD.",
+          "examples": [350000, 2400000]
+        },
+        "value_mid_usd": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Base case estimated value in USD. This is the number used in portfolio reporting.",
+          "examples": [520000, 2850000]
+        },
+        "value_high_usd": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Optimistic (bull case) estimated value in USD.",
+          "examples": [750000, 3400000]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "description": "Confidence level. 'high' = mark-to-market or recent appraisal. 'medium' = comparable or NAV. 'low' = cost-basis on early-stage with no recent data. Guardrail: 'low' confidence always requires human_approved=true before use in reporting."
+        },
+        "assumptions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Plain-language list of key assumptions used in this valuation. Required — minimum 3 items.",
+          "minItems": 1,
+          "examples": [
+            [
+              "Applied 6.5x ARR multiple based on SaaS comps at similar growth rate and NRR",
+              "Applied 25% illiquidity discount for private company",
+              "Used Q2 2026 ARR of $4.2M as base metric"
+            ]
+          ]
+        },
+        "method_notes": {
+          "type": ["string", "null"],
+          "description": "Narrative explanation of method choices, comparable selection, or any unusual adjustments.",
+          "examples": ["Used trailing ARR rather than forward ARR due to incomplete Q3 visibility. Comps sourced from PitchBook SaaS index June 2026.", null]
+        },
+        "human_approved": {
+          "type": "boolean",
+          "description": "Whether a human has reviewed and approved this valuation. Guardrail: all valuations with confidence='low' or value_mid_usd > $500,000 must be human_approved=true before use in LP reporting."
+        },
+        "approved_by": {
+          "type": ["string", "null"],
+          "description": "Email of the person who approved this valuation. Required if human_approved=true.",
+          "examples": ["grayson.culliford@hivefs.com", null]
+        },
+        "approved_at": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "UTC datetime of approval. Required if human_approved=true.",
+          "examples": ["2026-07-16T10:30:00Z", null]
+        }
+      }
+    }
+
+  },
+
+  "type": "object",
+  "required": ["id", "deal_id", "deal_slug", "input", "result", "created_at"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID v4 for this valuation record.",
+      "examples": ["b8e2f1a3-4c6d-5e7f-9a0b-1c2d3e4f5a6b"]
+    },
+    "deal_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID of the parent Deal."
+    },
+    "deal_slug": {
+      "type": "string",
+      "description": "Slug of the parent deal. Used in file path.",
+      "examples": ["acme-corp-series-b"]
+    },
+    "update_trigger_ref": {
+      "type": ["string", "null"],
+      "description": "Relative path to the DealUpdate that triggered this valuation. Null if triggered by schedule or manual run.",
+      "examples": ["deal-updates/2026/07/15/acme-corp-series-b--earnings--email--a3f9b1c2.json", null]
+    },
+    "trigger_type": {
+      "type": "string",
+      "enum": ["deal-update", "scheduled-quarterly", "manual", "deal-update-exit"],
+      "description": "What caused this valuation to be run."
+    },
+    "input": {
+      "$ref": "#/definitions/ValuationInput"
+    },
+    "result": {
+      "$ref": "#/definitions/ValuationResult"
+    },
+    "prior_value_ref": {
+      "type": ["string", "null"],
+      "description": "Relative path to the immediately preceding valuation record for this deal. Enables time-series comparison.",
+      "examples": ["valuations/acme-corp-series-b/valuation_2026-03-31_a1b2c3d4.json", null]
+    },
+    "prior_value_mid_usd": {
+      "type": ["number", "null"],
+      "description": "The value_mid_usd from the prior valuation, copied here for quick delta calculation without file lookup.",
+      "examples": [480000, null]
+    },
+    "value_delta_usd": {
+      "type": ["number", "null"],
+      "description": "result.value_mid_usd minus prior_value_mid_usd. Positive = appreciation, negative = depreciation.",
+      "examples": [40000, -30000, null]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC datetime when this valuation record was created.",
+      "examples": ["2026-07-15T09:15:00Z"]
+    },
+    "memo_path": {
+      "type": ["string", "null"],
+      "description": "Relative path to a narrative valuation memo, if one was written.",
+      "examples": ["valuations/acme-corp-series-b/valuation_memo_2026-07-15.md", null]
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "examples": [["quarterly-review", "q2-2026", "comparable-method"]]
+    }
+  }
+}

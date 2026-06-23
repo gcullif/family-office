@@ -1,0 +1,125 @@
+{
+  "scope": "GLOBAL",
+  "date": "2026-06-11",
+  "batch": [
+    {
+      "domain": "investments",
+      "run_id": "trun_b7d17f0e99f7490f85d1c2105549bd39",
+      "modified_at": "2026-06-11T15:19:06.492826Z",
+      "sources": 5,
+      "notes": 0,
+      "note_files": 1
+    },
+    {
+      "domain": "family",
+      "run_id": "trun_b7d17f0e99f7490f9f5c731a90a328ae",
+      "modified_at": "2026-06-11T15:17:26.156311Z",
+      "sources": 5,
+      "notes": 0,
+      "note_files": 1
+    },
+    {
+      "domain": "general-research",
+      "run_id": "trun_b7d17f0e99f7490fad08720fc0a90678",
+      "modified_at": "2026-06-11T15:28:55.780376Z",
+      "sources": 6,
+      "notes": 8,
+      "note_files": 8
+    },
+    {
+      "domain": "strategy",
+      "run_id": "trun_b7d17f0e99f7490fa1ac571174e10bff",
+      "modified_at": "2026-06-11T15:28:07.236916Z",
+      "sources": 6,
+      "notes": 8,
+      "note_files": 8
+    },
+    {
+      "domain": "tax",
+      "run_id": "trun_b7d17f0e99f7490f8fca2c4dab560d7f",
+      "modified_at": "2026-06-11T15:27:55.101065Z",
+      "sources": 17,
+      "notes": 8,
+      "note_files": 8,
+      "version": 2,
+      "note": "v2 evidence repair: 11 new authoritative sources + ISO 15489 reuse; notes rewritten evidence-graded; v1 archived"
+    },
+    {
+      "domain": "trusts-governance",
+      "run_id": "trun_b7d17f0e99f7490facd0b688cbafe751",
+      "modified_at": "2026-06-11T15:27:13.520047Z",
+      "sources": 4,
+      "notes": 10,
+      "note_files": 10
+    },
+    {
+      "domain": "real-assets",
+      "run_id": "trun_b7d17f0e99f7490fb9dbd0ec0d6a3484",
+      "modified_at": "2026-06-11T15:27:18.886714Z",
+      "sources": 4,
+      "notes": 10,
+      "note_files": 10
+    },
+    {
+      "domain": "philanthropy",
+      "run_id": "trun_b7d17f0e99f7490fb7ed2c2aaa1bf1dd",
+      "modified_at": "2026-06-11T14:09:00.793418Z",
+      "sources": 1,
+      "notes": 0,
+      "note_files": 1
+    }
+  ],
+  "dedup": {
+    "method": "run.run_id across all received blobs",
+    "duplicates_found": 0,
+    "dedup_actions": []
+  },
+  "gap_research": {
+    "permission": "allowed",
+    "caps": {
+      "per_domain": 5,
+      "total": 20
+    },
+    "sources_added_or_repaired_total": 24,
+    "by_domain": {
+      "investments": 5,
+      "family": 1,
+      "general-research": 1,
+      "tax": 12,
+      "trusts-governance": 2,
+      "philanthropy": 1,
+      "strategy": 0,
+      "real-assets": 0
+    },
+    "failed_fetches": [
+      "https://www.sec.gov/about/divisions-offices/division-investment-management/information-newly-registered-investment-advisers",
+      "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/age-appropriate-design-a-code-of-practice-for-online-services/",
+      "https://www.archives.gov/research/guide-to-records/vital-records",
+      "https://www.irs.gov/forms-pubs/about-schedule-k-1-form-1065"
+    ],
+    "caps_respected": true,
+    "tax_repair_pass_2026_06_11": {
+      "cap_new_sources": 25,
+      "new_sources": 11,
+      "failed_fetches": [
+        "https://www.irs.gov/forms-pubs/about-schedule-k-1-form-1065",
+        "https://pcaobus.org/oversight-inspections/standards/auditing-standards/details/AS1215"
+      ]
+    }
+  },
+  "global_files": [
+    "archive/general-research/2026-06-11__GLOBAL__master-source-index.json",
+    "archive/general-research/2026-06-11__GLOBAL__master-manifest.json",
+    "archive/general-research/2026-06-11__GLOBAL__executive-synthesis.md"
+  ],
+  "qa_flags_rollup": [
+    "missing_citations (investments)",
+    "missing_notes (investments, family, philanthropy)",
+    "missing_excerpts_for_source (10 sources unrepaired, all tier-3 or fetch-failed)",
+    "weak_source_tier_3 (21 of 36 sources)",
+    "url_without_supporting_excerpt (family S4, S5)",
+    "quote_not_verified (philanthropy, 2 embedded quotes)",
+    "unsupported_claim (all synthesized NOTE framework content across domains)",
+    "tax NOTE 7 unsupported_topic (no authoritative monitoring guidance retrieved)"
+  ]
+}

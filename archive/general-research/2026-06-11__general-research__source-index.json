@@ -1,0 +1,77 @@
+{
+  "domain": "general-research",
+  "run_id": "trun_b7d17f0e99f7490fad08720fc0a90678",
+  "date": "2026-06-11",
+  "sources": [
+    {
+      "id": "S1",
+      "global_id": "GS11",
+      "title": "MoSCoW Prioritization | Glossary - ProductPlan",
+      "url": "https://www.productplan.com/glossary/moscow-prioritization",
+      "type": "citation",
+      "excerpts": [
+        "MoSCoW prioritization, also known as the MoSCoW method or MoSCoW analysis, is a popular prioritization technique for managing requirements. The acronym MoSCoW represents four categories of initiatives: must-have, should-have, could-have, and won’t-have, or will not have right now."
+      ],
+      "retrieval_date": "2026-06-11",
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source_repaired_via_gap_research"]
+    },
+    {
+      "id": "S2",
+      "global_id": "GS12",
+      "title": "RESEARCH PROJECT INTAKE FORM TEMPLATE (Smartsheet PDF)",
+      "url": "http://smartsheet.com/sites/default/files/2022-04/IC-Research-Project-Intake-Form-11354_PDF.pdf",
+      "type": "citation",
+      "excerpts": [
+        "PROJECT DESCRIPTION",
+        "RESEARCH PROJECT INTAKE FORM TEMPLATE\nR",
+        "REQUIRED RESOURCES "
+      ],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "fragmentary_excerpts"]
+    },
+    {
+      "id": "S3",
+      "global_id": "GS13",
+      "title": "What Is Digital Provenance? Definition and Standards - TrueScreen",
+      "url": "https://truescreen.io/articles/digital-provenance/",
+      "type": "citation",
+      "excerpts": [],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source", "gap_research_not_attempted_low_value_source"]
+    },
+    {
+      "id": "S4",
+      "global_id": "GS14",
+      "title": "Evaluating Online Sources: Red Flags - LibGuides at Avenues School",
+      "url": "https://avenues.libguides.com/c.php?g=1326123&p=9766508",
+      "type": "citation",
+      "excerpts": [],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source", "gap_research_not_attempted_low_value_source"]
+    },
+    {
+      "id": "S5",
+      "global_id": "GS15",
+      "title": "Quote Extraction And Attribution - CoreNLP (Stanford NLP)",
+      "url": "https://stanfordnlp.github.io/CoreNLP/quote.html",
+      "type": "citation",
+      "excerpts": [
+        "Deterministically picks out quotes from a text . All top-level quotes, are supplied by the top level annotation for a text. "
+      ],
+      "source_tier": 2,
+      "qa_flags": []
+    },
+    {
+      "id": "S6",
+      "global_id": "GS16",
+      "title": "The Trust Layer for a Verified Internet - OpenOrigins",
+      "url": "http://openorigins.com/products/secure-source",
+      "type": "citation",
+      "excerpts": [],
+      "source_tier": 3,
+      "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source", "gap_research_not_attempted_low_value_source"]
+    }
+  ],
+  "qa_flags": ["content_outside_note_sections_not_filed_as_notes (preamble, 'Global validated sources' placeholder, implementation notes)"]
+}

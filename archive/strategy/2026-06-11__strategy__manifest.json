@@ -1,0 +1,35 @@
+{
+  "domain": "strategy",
+  "run_id": "trun_b7d17f0e99f7490fa1ac571174e10bff",
+  "run_created_at": "2026-06-11T15:27:10.613496Z",
+  "run_modified_at": "2026-06-11T15:28:07.236916Z",
+  "date_used": "2026-06-11",
+  "processor": "core-fast",
+  "basis_confidence_reported": "medium",
+  "classification": "strategy (strategy module operating model, NOTES 1-8)",
+  "files": [
+    "2026-06-11__strategy__source-index.json",
+    "2026-06-11__strategy__decision-ready-brief.md",
+    "2026-06-11__strategy__note-01.md",
+    "2026-06-11__strategy__note-02.md",
+    "2026-06-11__strategy__note-03.md",
+    "2026-06-11__strategy__note-04.md",
+    "2026-06-11__strategy__note-05.md",
+    "2026-06-11__strategy__note-06.md",
+    "2026-06-11__strategy__note-07.md",
+    "2026-06-11__strategy__note-08.md",
+    "2026-06-11__strategy__manifest.json"
+  ],
+  "source_count": 6,
+  "sources_from_run": 6,
+  "sources_from_gap_research": 0,
+  "notes_detected_in_content": 8,
+  "dedup_actions": [],
+  "gap_research": {"permission": "allowed", "performed": false, "reason": "all sources carried excerpts; cap budget allocated to domains with missing evidence"},
+  "qa_flags": [
+    "weak_source_tier_3 (S2, S3, S4, S5, S6)",
+    "truncated_excerpt (S1, S2, S4, S5)",
+    "low_relevance_source (S6)",
+    "unsupported_claim (NOTE 1-8 framework content)"
+  ]
+}

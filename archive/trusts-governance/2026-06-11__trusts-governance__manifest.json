@@ -1,0 +1,48 @@
+{
+  "domain": "trusts-governance",
+  "run_id": "trun_b7d17f0e99f7490facd0b688cbafe751",
+  "run_created_at": "2026-06-11T15:26:11.509952Z",
+  "run_modified_at": "2026-06-11T15:27:13.520047Z",
+  "date_used": "2026-06-11",
+  "processor": "core-fast",
+  "basis_confidence_reported": "medium",
+  "classification": "trusts-governance (highest-priority domain match: governance + trust administration)",
+  "files": [
+    "2026-06-11__trusts-governance__source-index.json",
+    "2026-06-11__trusts-governance__decision-ready-brief.md",
+    "2026-06-11__trusts-governance__note-01.md",
+    "2026-06-11__trusts-governance__note-02.md",
+    "2026-06-11__trusts-governance__note-03.md",
+    "2026-06-11__trusts-governance__note-04.md",
+    "2026-06-11__trusts-governance__note-05.md",
+    "2026-06-11__trusts-governance__note-06.md",
+    "2026-06-11__trusts-governance__note-07.md",
+    "2026-06-11__trusts-governance__note-08.md",
+    "2026-06-11__trusts-governance__note-09.md",
+    "2026-06-11__trusts-governance__note-10.md",
+    "2026-06-11__trusts-governance__manifest.json"
+  ],
+  "source_count": 4,
+  "sources_from_run": 3,
+  "sources_from_gap_research": 1,
+  "sources_repaired_via_gap_research": 1,
+  "notes_detected_in_content": 10,
+  "dedup_actions": [],
+  "gap_research": {
+    "permission": "allowed",
+    "performed": true,
+    "sources_added": ["S4 (Cornell LII trustee)"],
+    "sources_repaired": ["S2 (Keystone — two verbatim excerpts captured from live page)"],
+    "not_attempted": ["S1 (Forbes), S3 (WealthHub) — tier-3"],
+    "per_domain_cap": 5,
+    "cap_respected": true
+  },
+  "qa_flags": [
+    "missing_excerpts_for_source (S1, S3)",
+    "missing_excerpts_for_source_repaired_via_gap_research (S2)",
+    "weak_source_tier_3 (S1, S2, S3)",
+    "gap_research_added_source (S4)",
+    "unsupported_claim (NOTE 1-10 content)",
+    "content_claims_excerpt_support_contradicted_by_empty_citations"
+  ]
+}

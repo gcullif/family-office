@@ -1,0 +1,112 @@
+{
+  "name": {
+    "value": "Apple Inc. (AAPL)",
+    "plain_language": "Apple — the company that makes the iPhone, Mac, iPad, and Apple Watch, and runs the App Store. One of the largest companies in the world by market value.",
+    "is_sample": false,
+    "source_ref": ["https://investor.apple.com/stock-price/default.aspx"],
+    "note": ""
+  },
+  "cls": {
+    "value": "Equity > Information Technology > Technology Hardware & Equipment > Technology Hardware, Storage & Peripherals",
+    "plain_language": "This is a stock (ownership stake) in a technology company. Apple is classified under hardware — it designs and sells physical devices, even though a growing share of its revenue comes from services.",
+    "is_sample": false,
+    "source_ref": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193"],
+    "note": "GICS Sector: Information Technology. Industry Group: Technology Hardware & Equipment. Industry: Technology Hardware, Storage & Peripherals."
+  },
+  "entity": {
+    "value": "California Corporation, incorporated January 3, 1977, listed on NASDAQ (AAPL) since December 12, 1980. CIK: 0000320193. EIN: 94-2404110. Headquartered at One Apple Park Way, Cupertino, CA 95014.",
+    "plain_language": "Apple is a California company, founded in 1977 by Steve Jobs, Steve Wozniak, and Ronald Wayne. Its shares have traded on the NASDAQ stock exchange since 1980.",
+    "is_sample": false,
+    "source_ref": ["https://www.sec.gov/edgar/browse/?CIK=0000320193"],
+    "note": ""
+  },
+  "val": {
+    "value": {
+      "amount": 290.55,
+      "currency": "USD",
+      "as_of_date": "2026-06-09",
+      "type": "market_price"
+    },
+    "plain_language": "As of June 9, 2026, one share of Apple stock cost $290.55. The stock fell about 3.6% that day following Apple's WWDC developer conference, where investors were disappointed by a lack of clear AI monetization plans.",
+    "is_sample": false,
+    "source_ref": ["https://finance.yahoo.com/quote/AAPL/"],
+    "note": "52-week range: $195.07 – $317.40. Market cap approximately $4.27 trillion."
+  },
+  "vh": {
+    "value": [
+      {
+        "date": "2023-12-29",
+        "price_or_nav": 190.55,
+        "currency": "USD",
+        "source_ref": ["https://www.statmuse.com/money/ask/apple-stock-price-december-29-2023"]
+      },
+      {
+        "date": "2024-12-31",
+        "price_or_nav": 249.06,
+        "currency": "USD",
+        "source_ref": ["https://www.statmuse.com/money/ask/apple-stock-price-in-december-2024"]
+      },
+      {
+        "date": "2025-12-31",
+        "price_or_nav": 271.61,
+        "currency": "USD",
+        "source_ref": ["https://www.macrotrends.net/stocks/charts/AAPL/apple/stock-price-history"]
+      }
+    ],
+    "plain_language": "Apple's stock price at the end of each recent year: $190.55 (end of 2023), $249.06 (end of 2024), $271.61 (end of 2025). That's roughly +31% in 2024 and +9% in 2025.",
+    "is_sample": false,
+    "source_ref": [],
+    "note": ""
+  },
+  "tax": {
+    "value": "Qualified dividend income; long-term capital gains treatment applies to shares held more than one year. Dividends reported on Form 1099-DIV.",
+    "plain_language": "Dividends Apple pays are typically taxed at the lower 'qualified dividend' rate (0%, 15%, or 20% depending on your income bracket), not as ordinary income. If you sell shares you've held for over a year, any profit is taxed at the lower long-term capital gains rate as well.",
+    "is_sample": false,
+    "source_ref": ["https://investor.apple.com/stock-price/default.aspx"],
+    "note": "Consult your tax advisor for individual circumstances."
+  },
+  "income": {
+    "value": "$0.27 per share quarterly ($1.08 annualized). Most recent ex-dividend date: May 9, 2026. Payable: May 14, 2026. Next ex-dividend date: August 11, 2026. Next payment date: August 14, 2026.",
+    "plain_language": "Apple pays shareholders $0.27 per share four times a year (roughly every three months). On an annualized basis that's $1.08 per share — a modest yield of about 0.37% at current prices. These payments are reported on Form 1099-DIV.",
+    "is_sample": false,
+    "source_ref": [
+      "https://www.tipranks.com/stocks/aapl/dividends",
+      "https://stockevents.app/en/stock/AAPL/dividends"
+    ],
+    "note": "Apple has paid and grown its dividend every year since reinstating it in 2012. Dividend yield ~0.37% as of June 2026."
+  },
+  "liquidity": {
+    "value": "Highly liquid. Trades on NASDAQ under ticker AAPL. Average daily volume typically exceeds 50–80 million shares. Bid-ask spread is negligible for any reasonable position size.",
+    "plain_language": "Apple is one of the most actively traded stocks in the world. You can buy or sell any reasonable amount on any trading day without meaningfully affecting the price.",
+    "is_sample": false,
+    "source_ref": ["https://www.nasdaq.com/market-activity/stocks/aapl"],
+    "note": ""
+  },
+  "expense_ratio": {
+    "value": null,
+    "plain_language": "Not applicable — Apple is an individual stock, not a fund. There is no annual management fee deducted from this holding.",
+    "is_sample": false,
+    "source_ref": [],
+    "note": "Not applicable — individual security."
+  },
+  "benchmark": {
+    "value": "S&P 500 Index",
+    "plain_language": "Apple is typically measured against the S&P 500 — a basket of the 500 largest US companies — because it is one of the largest constituents of that index. Apple's performance often influences the S&P 500 itself given its size.",
+    "is_sample": false,
+    "source_ref": [],
+    "note": "Secondary benchmark: S&P 500 Information Technology Sector Index. Apple is a top holding in both."
+  },
+  "custodian": {
+    "value": null,
+    "plain_language": "Where this holding is physically held — the broker, fund administrator, or transfer agent.",
+    "is_sample": true,
+    "note": "SAMPLE — family-private; replace with actual custodian (e.g., Fidelity Institutional, Schwab Advisor Services)."
+  },
+  "values_alignment": {
+    "value": "Partial alignment. Apple has strong environmental commitments — it claims a carbon-neutral supply chain goal and has published sustainability reports. It is known for privacy-first product design, which may align with family values around data stewardship. Tensions: supply chain labor practices (primarily via Foxconn in China) have faced scrutiny; significant revenue concentration in China creates geopolitical exposure. The company's AI strategy as of mid-2026 remains unclear in terms of societal impact.",
+    "plain_language": "Apple is a mixed picture on values. It takes privacy and environmental issues seriously compared to many tech peers, but its manufacturing relies heavily on overseas labor with working conditions that have drawn criticism. A significant portion of its revenue depends on China, which introduces risks tied to geopolitics.",
+    "is_sample": false,
+    "source_ref": [],
+    "note": "Review against family values charter annually."
+  }
+}

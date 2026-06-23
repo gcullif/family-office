@@ -1,0 +1,79 @@
+{
+  "domain": "tax",
+  "run_id": "trun_b7d17f0e99f7490f8fca2c4dab560d7f",
+  "date": "2026-06-11",
+  "version": 2,
+  "supersedes": "_archived-old-versions/2026-06-11__tax__source-index.json (v1)",
+  "note": "v2: evidence repair pass. 11 new authoritative sources added via gap research (cap 25); vendor sources retained for context only and may not support [FACT] claims.",
+  "sources": [
+    {"id": "S1", "global_id": "GS23", "title": "Big Data Aggregation Changing the Face of Client Write-Up (Thomson Reuters Tax blog)", "url": "https://tax.thomsonreuters.com/blog/big-data-aggregation-changing-the-face-of-client-write-up/", "type": "citation", "excerpts": [], "source_tier": 3, "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source", "context_only_not_fact_support"]},
+    {"id": "S2", "global_id": "GS24", "title": "AI-Powered Automation for Complex Schedule K-1 Tax Data (K1x)", "url": "https://k1x.io/k-1-analysis-software-ai-powered-automation-for-complex-schedule-k-1-tax-data/", "type": "citation", "excerpts": [], "source_tier": 3, "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source", "context_only_not_fact_support"]},
+    {"id": "S3", "global_id": "GS25", "title": "10 Manual Data Aggregation Challenges & Solutions in 2026 (Asora blog)", "url": "https://www.asora.com/blog/top-10-family-office-data-aggregation-reporting-challenges", "type": "citation", "excerpts": [], "source_tier": 3, "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source", "context_only_not_fact_support"]},
+    {"id": "S4", "global_id": "GS26", "title": "K-1 Data Processing: AI-Powered Automation for High-Volume Tax Teams (K1x)", "url": "https://k1x.io/k-1-data-processing-ai-powered-automation-for-high-volume-tax-teams/", "type": "citation", "excerpts": [], "source_tier": 3, "qa_flags": ["weak_source_tier_3", "missing_excerpts_for_source", "context_only_not_fact_support"]},
+    {"id": "S5", "global_id": "GS27", "title": "How long should I keep records? (IRS)", "url": "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "Generally, you must keep your records that support an item of income, deduction or credit shown on your tax return until the period of limitations for that tax return runs out.",
+      "Keep records for 7 years if you file a claim for a loss from worthless securities or bad debt deduction.",
+      "Keep records indefinitely if you do not file a return.",
+      "Keep employment tax records for at least 4 years after the date that the tax becomes due or is paid, whichever is later.",
+      "Generally, keep records relating to property until the period of limitations expires for the year in which you dispose of the property."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [1, 5, 6]},
+    {"id": "S6", "global_id": "GS37", "title": "Recordkeeping (IRS small business hub)", "url": "https://www.irs.gov/businesses/small-businesses-self-employed/recordkeeping", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "Good records will help you monitor the progress of your business, prepare your financial statements, identify sources of income, keep track of deductible expenses, keep track of your basis in property, prepare your tax returns, and support items reported on your tax returns.",
+      "You must keep your records as long as needed to prove the income or deductions on a tax return.",
+      "Keep all records of employment taxes for at least four years."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [1, 3, 5]},
+    {"id": "S7", "global_id": "GS38", "title": "What kind of records should I keep (IRS)", "url": "https://www.irs.gov/businesses/small-businesses-self-employed/what-kind-of-records-should-i-keep", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "Your books must show your gross income, as well as your deductions and credits.",
+      "All requirements that apply to hard copy books and records also apply to electronic records.",
+      "Supporting documents include sales slips, paid bills, invoices, receipts, deposit slips, and canceled checks.",
+      "Your supporting documents should identify the payee, the amount paid, proof of payment, the date incurred, and include a description of the item purchased or service received that shows the amount was for a business expense.",
+      "You need records to compute the annual depreciation and the gain or loss when you sell the assets.",
+      "It is important to keep these documents because they support the entries in your books and on your tax return."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [2, 3, 6]},
+    {"id": "S8", "global_id": "GS39", "title": "Burden of proof (IRS)", "url": "https://www.irs.gov/businesses/small-businesses-self-employed/burden-of-proof", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "The responsibility to prove entries, deductions, and statements made on your tax returns is known as the burden of proof. You must be able to prove (substantiate) certain elements of expenses to deduct them.",
+      "You generally must have documentary evidence, such as receipts, canceled checks, or bills, to support your expenses."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [3, 5, 6]},
+    {"id": "S9", "global_id": "GS40", "title": "26 U.S. Code § 6001 - Notice or regulations requiring records, statements, and special returns (Cornell LII)", "url": "https://www.law.cornell.edu/uscode/text/26/6001", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "Every person liable for any tax imposed by this title, or for the collection thereof, shall keep such records, render such statements, make such returns, and comply with such rules and regulations as the Secretary may from time to time prescribe."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [1, 3, 5, 6]},
+    {"id": "S10", "global_id": "GS41", "title": "26 U.S. Code § 7216 - Disclosure or use of information by preparers of returns (Cornell LII)", "url": "https://www.law.cornell.edu/uscode/text/26/7216", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "discloses any information furnished to him for, or in connection with, the preparation of any such return, or",
+      "uses any such information for any purpose other than to prepare, or assist in preparing, any such return,",
+      "shall be guilty of a misdemeanor, and, upon conviction thereof, shall be fined not more than $1,000 ($100,000 in the case of a disclosure or use to which section 6713(b) applies), or imprisoned not more than 1 year, or both, together with the costs of prosecution."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source", "excerpts_are_clause_fragments_of_statutory_sentence"], "supports_notes": [4]},
+    {"id": "S11", "global_id": "GS42", "title": "Am I required to file a Form 1099 or other information return? (IRS)", "url": "https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "Starting tax year 2023, if you have 10 or more information returns, you must file them electronically.",
+      "If you made a payment during the calendar year as a small business or self-employed (individual), you are most likely required to file an information return to the IRS.",
+      "For each person to whom you have paid at least $600 for the following during the year (Form 1099-NEC):"
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [1, 2]},
+    {"id": "S12", "global_id": "GS43", "title": "Partner's Instructions for Schedule K-1 (Form 1065) (2025) (IRS)", "url": "https://www.irs.gov/instructions/i1065sk1", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "The partnership uses Schedule K-1 to report your share of the partnership’s income, deductions, credits, etc. Keep it for your records. Don’t file it with your tax return unless you're specifically required to do so.",
+      "The partnership files a copy of Schedule K-1 (Form 1065) with the IRS.",
+      "For your protection, Schedule K-1 may show only the last four digits of your identifying number (social security number (SSN), etc.). However, the partnership has reported your complete identifying number to the IRS."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [2]},
+    {"id": "S13", "global_id": "GS44", "title": "About Form 2848, Power of Attorney and Declaration of Representative (IRS)", "url": "https://www.irs.gov/forms-pubs/about-form-2848", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "Use Form 2848 to authorize an individual to represent you before the IRS. The individual you authorize must be a person eligible to practice before the IRS.",
+      "Your authorization of a qualifying representative will also allow that individual to receive and inspect your confidential tax information."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [4]},
+    {"id": "S14", "global_id": "GS45", "title": "least privilege - Glossary (NIST CSRC)", "url": "https://csrc.nist.gov/glossary/term/least_privilege", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "A security principle that a system should restrict the access privileges of users (or processes acting on behalf of users) to the minimum necessary to accomplish assigned tasks."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [4, 8]},
+    {"id": "S15", "global_id": "GS46", "title": "Separation of Duty (SOD) - Glossary (NIST CSRC, from NIST SP 800-192)", "url": "https://csrc.nist.gov/glossary/term/separation_of_duty", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "refers to the principle that no user should be given enough privileges to misuse the system on their own. For example, the person authorizing a paycheck should not also be the one who can prepare them.",
+      "Separation of duties can be enforced either statically (by defining conflicting roles, i.e., roles which cannot be executed by the same user) or dynamically (by enforcing the control at access time)."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [8]},
+    {"id": "S16", "global_id": "GS47", "title": "audit trail - Glossary (NIST CSRC)", "url": "https://csrc.nist.gov/glossary/term/audit_trail", "type": "gap_research_added", "retrieval_date": "2026-06-11", "excerpts": [
+      "A record showing who has accessed an information technology (IT) system and what operations the user has performed during a given period.",
+      "A chronological record that reconstructs and examines the sequence of activities surrounding or leading to a specific operation, procedure, or event in a security-relevant transaction from inception to result."
+    ], "source_tier": 1, "qa_flags": ["gap_research_added_source"], "supports_notes": [5, 8]},
+    {"id": "S17", "global_id": "GS7", "title": "ISO 15489 Records management", "url": "https://committee.iso.org/sites/tc46sc11/home/projects/published/iso-15489-records-management.html", "type": "reused_from_family_domain", "excerpts": [
+      "ISO 15489 establishes the fundamental concepts and principles for creating, capturing, and managing records."
+    ], "source_tier": 1, "qa_flags": ["cross_domain_reuse"], "supports_notes": [5]}
+  ],
+  "gap_research_failed_attempts": [
+    {"url": "https://www.irs.gov/forms-pubs/about-schedule-k-1-form-1065", "reason": "fetch returned empty content (2 attempts)", "qa_flags": ["gap_research_fetch_failed"]},
+    {"url": "https://pcaobus.org/oversight-inspections/standards/auditing-standards/details/AS1215", "reason": "fetch returned empty content", "qa_flags": ["gap_research_fetch_failed"]}
+  ],
+  "qa_flags": ["note_7_unsupported_no_authoritative_monitoring_guidance_retrieved"]
+}
