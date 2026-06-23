@@ -3,6 +3,34 @@
 This file tells Claude (and any collaborator) how this repository is organized and how new
 material should be filed. Read `README.md` first for the map; this file covers the *rules*.
 
+---
+
+## Start here — active implementation task
+
+The next thing to build is `scripts/ingest_deal_update.py` — the main ingestion pipeline.
+
+**Read these files before writing any code:**
+1. `docs/architecture.md` — system design, folder structure, state machine
+2. `docs/workflows_ingestion.md` — step-by-step ingestion workflow + deal matching logic
+3. `schemas/deal_update.schema.json` — the output record shape
+4. `schemas/deal.schema.json` — what a deal record looks like (needed for matching)
+
+**Implement in this order:**
+1. State machine: RECEIVED → PARSED → MATCHED → FILED → PROCESSED
+2. Deal matching (deterministic → fuzzy → NEEDS_REVIEW queue)
+3. Schema validation via `jsonschema` before any file write
+4. Provenance block on every record (source, timestamp_utc, author, file_hash)
+5. CHANGELOG.md append via `scripts/changelog_writer.py`
+6. `--dry-run` flag that prints what would be written without writing it
+
+**Hard rules (never break these):**
+- No file is written without passing schema validation
+- If `confidence_score < 0.7`, set `needs_review = true` and halt — do not file
+- Filed records are immutable — corrections add a new record with `corrects_ref`
+- All paths are deterministic: `deal-updates/YYYY/MM/DD/{deal-slug}--{update-type}--{source}--{hash8}.json`
+
+---
+
 ## The thesis
 
 This is a generational archive that happens to track wealth. A descendant opening it decades
